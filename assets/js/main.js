@@ -8,6 +8,8 @@ window.onload = function () {
     OnLoadRequireJS("./assets/js/operation/addition.js")
     OnLoadRequireJS("./assets/js/operation/subtraction.js")
     OnLoadRequireJS("./assets/js/operation/multiplication.js")
+
+    OnLoadRequireJS("./assets/js/operation/evaluator.js")
 }
 
 function OnLoadRequireJS(path) {

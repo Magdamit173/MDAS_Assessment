@@ -1,12 +1,26 @@
 const display_score = document.querySelector("[data-display_score]")
 const display_term = document.querySelector("[data-display_term]")
 const display_input = document.querySelector("[data-display_input]")
+const option_display = document.querySelector("[data-option_display]")
 
 let isSelected = false
+let e_minnumber = -9
+let e_maxnumber = 9
+let e_terms = 2
+
+let e_answer = null
+let e_text_answer = null
+let e_assess_operation = null
 
 display_term.addEventListener("click",async () => {
     isSelected = !isSelected
     await isSelectionChanged()
+})
+
+display_term.addEventListener("change", (e) => {
+    EvaluateOperation(e.target.value)
+    regenerateOperation()
+    display_input.focus()
 })
 
 display_term.addEventListener("blur",async () => {
@@ -15,47 +29,23 @@ display_term.addEventListener("blur",async () => {
 })
 
 function getSelectionDisplay() {
-    return document.querySelector("[data-selection_display]")
+    return document.querySelector("[data-option_display]")
 }
 
-// async function isSelectionChanged() {
-//     const option = document.querySelector("[data-selection_display]")
-
-//     if (!isSelected && !option) {
-//         const newOption = document.createElement("option")
-//         newOption.setAttribute("data-selection_display", "")
-//         newOption.value = "selection_display"
-//         display_term.appendChild(newOption)
-//         newOption.textContent = "< option >"
-
-//         display_term.selectedIndex = Array.from(display_term.children).map(p => {
-//             p.value
-//         }).indexOf("selection_display")
-
-//     } else if (isSelected && option) option.remove()
-// }
-
 async function isSelectionChanged() {
-    const option = document.querySelector("[data-selection_display]")
 
-    if (!isSelected && !option) {
-        const newOption = document.createElement("option")
-        newOption.setAttribute("data-selection_display", "")
-        newOption.value = "selection_display"
-        display_term.appendChild(newOption)
-        newOption.textContent = "< option >"
-        
+    if (!isSelected) {
         let selectedIndex = -1;
         for (let i = 0; i < display_term.options.length; i++) {
-            if (display_term.options[i].value === "selection_display") {
+            if (display_term.options[i].value === "option_display") {
                 selectedIndex = i;
                 break;
             }
         }
+        option_display.style.display = "block"
         display_term.selectedIndex = selectedIndex;
 
-    } else if (isSelected && option) option.remove()
+    } else if (isSelected) {
+        option_display.style.display = "none"
+    }
 }
-
-
-

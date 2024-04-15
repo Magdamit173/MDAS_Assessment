@@ -1,0 +1,13 @@
+@keyframes is_correct {
+    from {
+        background-color: initial;
+    }
+
+    to {
+        background-color: rgb(49, 249, 49);
+    }
+}
+
+.is_correct {
+    animation: is_correct 1s linear;
+}
