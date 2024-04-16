@@ -42,10 +42,10 @@ async function isSelectionChanged() {
                 break;
             }
         }
-        option_display.style.display = "block"
+        // option_display.style.display = "block"
         display_term.selectedIndex = selectedIndex;
 
     } else if (isSelected) {
-        option_display.style.display = "none"
+        // option_display.style.display = "none"
     }
 }

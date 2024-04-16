@@ -1,8 +1,8 @@
 # MDAS_Assessment
 
-- version 0.0.1
+- version 0.0.2
 
 ### update
 
-- added functionality of multiplication, addition, subtraction\
-- still in development but you can now play with it.
+- added customAlert function
+- fix some bugs

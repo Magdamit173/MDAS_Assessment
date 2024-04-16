@@ -4,6 +4,7 @@ window.onload = function () {
     OnLoadRequireJS("./assets/js/random/random.js")
     
     OnLoadRequireJS("./assets/js/time/timer.js")
+    OnLoadRequireJS("./assets/js/tab/alert.js")
 
     OnLoadRequireJS("./assets/js/operation/addition.js")
     OnLoadRequireJS("./assets/js/operation/subtraction.js")
