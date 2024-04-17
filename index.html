@@ -3,10 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MDAS Assessment</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/animation.css">
 
     <link rel="stylesheet" href="./assets/css/tab/customAlert.css">
+    <link rel="stylesheet" href="./assets/css/page/settings.css">
+    <link rel="stylesheet" href="./assets/css/page/tutorials.css">
+
     <link rel="icon" href="./assets/favicon/icon.png">
     
     <meta property="og:title" content="MDAS Assessment">
@@ -24,9 +27,36 @@
     </script>
 </head>
 <body>
-    <!-- <div class="nav_bar">
-
-    </div> -->
+    <div class="nav_bar">
+        <div class="nav_tutorials" data-nav_tutorials="">
+            Tutorials
+        </div>
+        <div class="nav_settings" data-nav_settings>
+            Settings
+        </div>
+    </div>
+    <div class="settings_wrapper" data-settings_wrapper="">
+        <div class="option_preference_wrapper">
+            <div class="option_sub_wrapper">
+                <label for="minnumber_input">
+                    Minimum Number
+                </label>
+                <input data-minnumber_input="" id="minnumber_input"/>
+            </div>
+            <div class="option_sub_wrapper">
+                <label for="maxnumber_input">
+                    Maximum Number
+                </label>
+                <input data-maxnumber_input="" id="maxnumber_input"/>
+            </div>
+            <div class="option_sub_wrapper">
+                <label for="terms_input">
+                    Number of Terms
+                </label>
+                <input data-terms_input="" id="terms_input"/>
+            </div>
+        </div>
+    </div>
     <div class="main_wrapper">
         <div class="display_score" data-display_score="">
             0

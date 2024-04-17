@@ -20,6 +20,12 @@
 
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    flex-direction: column;
+
     background-color: lavender;
 
     height: 100dvh;
@@ -31,7 +37,42 @@ body {
     justify-content: right;
     align-items: center;
 
+    height: 45px;
+
+    background-color: rgb(234, 86, 86);
+}
+
+.nav_tutorials {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1.3rem calc(.7rem + 2.7vw);
+
+    color: white;
     /* border: solid 1px black; */
+    
+    /* border: solid 1px white;
+    border-right: solid 1px transparent;
+    border-radius: 50% 0 0 50%; */
+}
+
+.nav_settings {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1.3rem calc(.7rem + 2.7vw);
+
+    color: white;
+    /* border: solid 1px black; */
+
+    /* border: solid 1px white;
+    border-right: solid 1px transparent;
+    border-radius: 50% 0 0 50%; */
+}
+
+.nav_bar > div:hover {
+    transition: all .2s ease;
+    background-color: white;
+    color: indianred;
+    /* text-shadow: 1px 1px black; */
+    font-weight: 700;
+    padding: 1.3rem calc(1rem + 2.7vw);
 }
 
 .main_wrapper {
@@ -39,16 +80,17 @@ body {
     justify-content: center;
     align-items: center;
 
-    height: 100dvh;
+    flex-grow: 1;
+    /* height: 90dvh; */
     width: 100dvw;
 
-    border: solid 1px blanchedalmond;
+    border: solid 1px aliceblue;
 }
 
 .solving_bar,
 .history_bar {
     /* border: solid 1px black; */
-    height: 100dvh;
+    height: 100%;
     width: 0;
 
     flex-basis: 50%;

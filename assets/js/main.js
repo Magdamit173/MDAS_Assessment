@@ -11,6 +11,11 @@ window.onload = function () {
     OnLoadRequireJS("./assets/js/operation/multiplication.js")
 
     OnLoadRequireJS("./assets/js/operation/evaluator.js")
+    
+    OnLoadRequireJS("./assets/js/page/activity.js")
+    OnLoadRequireJS("./assets/js/page/settings.js")
+    OnLoadRequireJS("./assets/js/page/tutorials.js")
+    
 }
 
 function OnLoadRequireJS(path) {
