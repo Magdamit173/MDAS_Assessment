@@ -8,6 +8,9 @@ function EvaluateOperation(operation) {
         break
         case "multiplication":
             configMultiplication()
+        case "division":
+            configDivision()
+        break
     }
 }
 

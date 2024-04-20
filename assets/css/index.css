@@ -40,6 +40,7 @@ body {
     height: 45px;
 
     background-color: rgb(234, 86, 86);
+    overflow: hidden;
 }
 
 .nav_tutorials {
@@ -81,7 +82,7 @@ body {
     align-items: center;
 
     flex-grow: 1;
-    /* height: 90dvh; */
+    height: calc(100dvh - 45px);
     width: 100dvw;
 
     border: solid 1px aliceblue;

@@ -9,10 +9,16 @@ terms_input.value = e_terms
 
 minnumber_input.addEventListener("keyup", (e) => {
     e_minnumber = parseFloat(e.target.value)
+    
+    regenerateOperation()
 })
 maxnumber_input.addEventListener("keyup", (e) => {
     e_maxnumber = parseFloat(e.target.value)
+
+    regenerateOperation()
 })
 terms_input.addEventListener("keyup", (e) => {
     e_terms = parseFloat(e.target.value)
+
+    regenerateOperation()
 })
