@@ -23,9 +23,10 @@ nav_settings.addEventListener("click", () => {
 
 // TODO change this eventlistener on the future
 nav_tutorials.addEventListener("click", () => {
-    if (isTutorials) return
-    customAlert("Not Available for A meantime", () => {
+    location.href = "./tutorials"
+    // if (isTutorials) return
+    // customAlert("Not Available for A meantime", () => {
 
-    })
-    isTutorials = true
+    // })
+    // isTutorials = true
 })

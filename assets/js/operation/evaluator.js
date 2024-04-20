@@ -8,6 +8,7 @@ function EvaluateOperation(operation) {
         break
         case "multiplication":
             configMultiplication()
+        break
         case "division":
             configDivision()
         break
@@ -27,6 +28,7 @@ display_input.addEventListener("keyup",async (e) => {
 
         add_hlist(`${e_text_answer} = ${e_answer}`)
         regenerateOperation()
+        await playAudio()
     }
 
     else if(e.target.value === "undefined" && isNaN(e.target.value) == isNaN(e_answer)) {
@@ -35,5 +37,6 @@ display_input.addEventListener("keyup",async (e) => {
 
         add_hlist(`${e_text_answer} = ${e_answer}`)
         regenerateOperation()
+        await playAudio()
     }
 })

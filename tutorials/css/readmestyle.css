@@ -1,0 +1,55 @@
+/* CSS to style the README-like HTML */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.markdown-body {
+    margin: 20px;
+}
+
+.markdown-body h1 {
+    font-size: 28px;
+}
+
+.markdown-body h2 {
+    font-size: 24px;
+}
+
+.markdown-body h2 {
+    font-size: 20px;
+}
+
+.markdown-body p {
+    font-size: 16px;
+}
+
+.markdown-body pre {
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+.markdown-body code {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 14px;
+}
+
+.markdown-body li {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.markdown-body a {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration-color: indianred;
+    text-decoration-thickness: 3px;
+}
+
+.markdown-body a:hover {
+    color: skyblue;
+    text-decoration-color: skyblue;
+}
