@@ -1,10 +1,3 @@
-// let m_minnumber = 1
-// let m_maxnumber = 9
-// let m_terms = 2
-
-// let m_answer = null
-// let m_text_answer = null
-
 function assessByMultiplication() {
     const terms = new Array()
 

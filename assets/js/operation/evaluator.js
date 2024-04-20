@@ -21,15 +21,17 @@ function regenerateOperation() {
 }
 
 display_input.addEventListener("keyup",async (e) => {
-    if (e.target.value == e_answer) {
+    if (parseFloat(e.target.value) == parseFloat(e_answer)) {
         display_score.textContent = parseFloat(display_score.textContent) + 1
         e.target.value = ""
 
-        // callbackTimer(1,async () => {
-        //     display_input.classList.add("is_correct")
-        //     // await asyncTimer(.2)
-        //     // display_input.classList.remove("is_correct")
-        // })
+        add_hlist(`${e_text_answer} = ${e_answer}`)
+        regenerateOperation()
+    }
+
+    else if(e.target.value === "undefined" && isNaN(e.target.value) == isNaN(e_answer)) {
+        display_score.textContent = parseFloat(display_score.textContent) + 1
+        e.target.value = ""
 
         add_hlist(`${e_text_answer} = ${e_answer}`)
         regenerateOperation()

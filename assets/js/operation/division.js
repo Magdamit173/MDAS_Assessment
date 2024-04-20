@@ -1,10 +1,3 @@
-// let m_minnumber = 1
-// let m_maxnumber = 9
-// let m_terms = 2
-
-// let m_answer = null
-// let m_text_answer = null
-
 function assessByDivision() {
     const terms = new Array()
     const any_term = new Array()
@@ -14,34 +7,17 @@ function assessByDivision() {
 
         terms.push(chosen_number)
     }
-
     let first_term = terms.reduce((accumulator, currentValue) => accumulator * currentValue, 1)
-    let last_term = new Array()
+    const c_first_term = first_term
 
-    console.log(first_term, terms)
+    for(let k = 0; k < e_terms; k++) {
+        first_term /= terms[k]
+        any_term.push(terms[k])
+    }
 
-    terms.forEach((value, index) => {
-        if (index == terms.length) {
-            last_term.push(terms[0])
-            terms.pop()
-
-            console.log("last part")
-        }
-        else {
-            const chosen_term = choice(terms)
-            any_term.push(chosen_term)
-            terms.splice(terms.indexOf(chosen_term), 1)
-
-            console.log("anyterm")
-        }
-    })
-    
-    any_term.forEach((value, index) => {
-        first_term = first_term / value
-    })
-
-    e_answer = last_term[0]
-    e_text_answer = `${first_term} / ${any_term.split(" / ")}`
+    non_infinite_answer = any_term[any_term.length - 1]
+    e_answer = (!isNaN(first_term)) ? non_infinite_answer : NaN
+    e_text_answer = `${c_first_term} / ${any_term.slice(0, any_term.length - 1, 1).join(" / ")}`
 }
 
 function configDivision() {

@@ -1,9 +1,3 @@
-// let s_minnumber = 1
-// let s_maxnumber = 9
-// let s_terms = 2
-
-// let s_answer = null
-// let s_text_answer = null
 
 function assessBySubtraction() {
     const terms = new Array()
