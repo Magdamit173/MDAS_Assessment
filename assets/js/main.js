@@ -7,6 +7,7 @@ window.onload = function () {
     
     // tab and time
     OnLoadRequireJS("./assets/js/time/timer.js")
+    OnLoadRequireJS("./assets/js/time/countdown.js")
     OnLoadRequireJS("./assets/js/tab/alert.js")
 
     // operation
@@ -14,7 +15,11 @@ window.onload = function () {
     OnLoadRequireJS("./assets/js/operation/subtraction.js")
     OnLoadRequireJS("./assets/js/operation/multiplication.js")
     OnLoadRequireJS("./assets/js/operation/division.js")
-    OnLoadRequireJS("./assets/js/operation/evaluator.js")
+
+    // evaluate 
+    
+    OnLoadRequireJS("./assets/js/evaluate/evaluator.js")
+    OnLoadRequireJS("./assets/js/evaluate/scoremanager.js")
     
     // page
     OnLoadRequireJS("./assets/js/page/activity.js")
@@ -24,6 +29,8 @@ window.onload = function () {
     // audio
     OnLoadRequireJS("./assets/js/audio/audio.js")
     
+    // localstorage
+    OnLoadRequireJS("./assets/js/storage/storage.js")
 }
 
 function OnLoadRequireJS(path) {

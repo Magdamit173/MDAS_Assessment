@@ -23,8 +23,16 @@ function regenerateOperation() {
 
 display_input.addEventListener("keyup",async (e) => {
     if (parseFloat(e.target.value) == parseFloat(e_answer)) {
-        display_score.textContent = parseFloat(display_score.textContent) + 1
+
+        e_score += 1
+        DisplayScore(e_score)
         e.target.value = ""
+
+        if (has_countdown.checked && !is_countdown) {
+            is_countdown = true
+
+            CountDown(e_countdown)
+        }
 
         add_hlist(`${e_text_answer} = ${e_answer}`)
         regenerateOperation()
@@ -32,8 +40,16 @@ display_input.addEventListener("keyup",async (e) => {
     }
 
     else if(e.target.value === "undefined" && isNaN(e.target.value) == isNaN(e_answer)) {
-        display_score.textContent = parseFloat(display_score.textContent) + 1
+        
+        e_score += 1
+        DisplayScore(e_score)
         e.target.value = ""
+
+        if (has_countdown.checked && !is_countdown) {
+            is_countdown = true
+
+            CountDown(e_countdown)
+        }
 
         add_hlist(`${e_text_answer} = ${e_answer}`)
         regenerateOperation()
