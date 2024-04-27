@@ -31,12 +31,12 @@ display_input.addEventListener("keyup",async (e) => {
         if (has_countdown.checked && !is_countdown) {
             is_countdown = true
 
-            CountDown(e_countdown)
+            await CountDown(e_countdown)
         }
 
         add_hlist(`${e_text_answer} = ${e_answer}`)
         regenerateOperation()
-        await playAudio()
+        await playCorrect()
     }
 
     else if(e.target.value === "undefined" && isNaN(e.target.value) == isNaN(e_answer)) {
@@ -48,11 +48,11 @@ display_input.addEventListener("keyup",async (e) => {
         if (has_countdown.checked && !is_countdown) {
             is_countdown = true
 
-            CountDown(e_countdown)
+            await CountDown(e_countdown)
         }
 
         add_hlist(`${e_text_answer} = ${e_answer}`)
         regenerateOperation()
-        await playAudio()
+        await playCorrect()
     }
 })

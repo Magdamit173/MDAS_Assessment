@@ -30,7 +30,7 @@ has_countdown.addEventListener("change",async () => {
 })
 
 
-function CountDown(seconds) {
+async function CountDown(seconds) {
     setTimeout(async () => {
         const high_score = await getLocalStorage("countdown")
 
@@ -43,7 +43,11 @@ function CountDown(seconds) {
         e_score = 0
         DisplayScore(e_score)
         is_countdown = false
-
+        clearInterval(countdown_interval_queue)
         display_input.blur()
     }, seconds * 1000)
+    await asyncTimer(1)
+    const countdown_interval_queue = setInterval(async () => {
+        await playCountDown()
+    }, 1000)
 }
