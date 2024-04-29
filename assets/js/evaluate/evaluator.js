@@ -12,6 +12,9 @@ function EvaluateOperation(operation) {
         case "division":
             configDivision()
         break
+        case "percentage":
+            configPercentage()
+        break
     }
 }
 

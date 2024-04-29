@@ -1,8 +1,8 @@
 # MDAS_Assessment
 
-- version 0.0.7.1
+- version 0.0.8
 
 ### update
 
-- added countdown sound
-- updated multiplication tutorial
+- added percentage option
+- if negative value added parentheses (addition and subtraction only)

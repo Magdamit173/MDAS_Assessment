@@ -8,7 +8,9 @@ function assessByAddition() {
     }
 
     e_answer = terms.reduce((accumulator, currentValue) => accumulator + currentValue, 0) 
-    e_text_answer = terms.join(" + ")
+    e_text_answer = terms.map(p => {
+        return p < 0 ? `(${p})`: p
+    }).join(" + ")
 }
 
 function configAddition() {

@@ -1,7 +1,7 @@
 const has_countdown = document.querySelector("[data-has_countdown]")
 const countdown_number = document.querySelector("[data-countdown_number]")
 
-let e_countdown = 30
+let e_countdown = 60
 let is_countdown = false
 
 countdown_number.value = e_countdown
@@ -19,8 +19,8 @@ countdown_number.addEventListener("keyup",async (e) => {
         e_countdown = 10
         e.target.value = e_countdown
     }
-
 })
+
 has_countdown.addEventListener("change",async () => {
     if (has_countdown.checked) {
         e_score = 0
