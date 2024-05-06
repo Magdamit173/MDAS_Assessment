@@ -1,8 +1,7 @@
 # MDAS_Assessment
 
-- version 0.0.8
+- version 0.0.8.1
 
 ### update
 
-- added percentage option
-- if negative value added parentheses (addition and subtraction only)
+- autosolver.js added (educational)

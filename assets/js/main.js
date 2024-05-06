@@ -32,6 +32,10 @@ window.onload = function () {
     
     // localstorage
     OnLoadRequireJS("./assets/js/storage/storage.js")
+
+    // Experimental
+    
+    OnLoadRequireJS("./assets/js/experimental/autosolver.js")
 }
 
 function OnLoadRequireJS(path) {
