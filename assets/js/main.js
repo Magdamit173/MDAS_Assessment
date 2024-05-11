@@ -16,6 +16,7 @@ window.onload = function () {
     OnLoadRequireJS("./assets/js/operation/multiplication.js")
     OnLoadRequireJS("./assets/js/operation/division.js")
     OnLoadRequireJS("./assets/js/operation/percentage.js")
+    OnLoadRequireJS("./assets/js/operation/prime.js")
 
     // evaluate 
     

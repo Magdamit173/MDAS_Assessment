@@ -1,4 +1,8 @@
+let s_operation = null
+
 function EvaluateOperation(operation) {
+    s_operation = operation
+
     switch (operation) {
         case "addition":
             configAddition()
@@ -14,6 +18,9 @@ function EvaluateOperation(operation) {
         break
         case "percentage":
             configPercentage()
+        break
+        case "prime":
+            configPrime()
         break
     }
 }
