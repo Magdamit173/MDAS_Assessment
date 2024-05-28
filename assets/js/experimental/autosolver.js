@@ -11,6 +11,6 @@ async function solve_script() {
 
 function autosolve() {
     setInterval(async () => {
-        await solve_script()
+        if(is_countdown) await solve_script()
     }, 330)
 }

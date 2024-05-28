@@ -10,10 +10,12 @@ terms_input.value = e_terms
 minnumber_input.addEventListener("keyup",async (e) => {
     e_minnumber = parseFloat(e.target.value)
     
+    await setLocalStorage("e_minnumber", e_minnumber)
     await asyncOverrideTimer(.3)
     if (!parseFloat(e.target.value)) {
         e_minnumber = -9
         e.target.value = e_minnumber
+        await setLocalStorage("e_minnumber", e_minnumber)
     }
 
     regenerateOperation()
@@ -21,10 +23,12 @@ minnumber_input.addEventListener("keyup",async (e) => {
 maxnumber_input.addEventListener("keyup",async (e) => {
     e_maxnumber = parseFloat(e.target.value)
 
+    await setLocalStorage("e_maxnumber", e_maxnumber)
     await asyncOverrideTimer(.3)
     if (!parseFloat(e.target.value)) {
         e_maxnumber = 9
         e.target.value = e_maxnumber
+        await setLocalStorage("e_maxnumber", e_maxnumber)
     }
     
     regenerateOperation()
@@ -32,10 +36,12 @@ maxnumber_input.addEventListener("keyup",async (e) => {
 terms_input.addEventListener("keyup",async (e) => {
     e_terms = parseFloat(e.target.value)
 
+    await setLocalStorage("e_terms", e_terms)
     await asyncOverrideTimer(.3)
     if (!parseFloat(e.target.value)) {
         e_terms = 2
         e.target.value = e_terms
+        await setLocalStorage("e_terms", e_terms)
     }
     
     regenerateOperation()

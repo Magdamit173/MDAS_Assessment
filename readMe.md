@@ -1,13 +1,17 @@
 # MDAS_Assessment
 
-- version 0.0.8.2
+- version 0.0.8.3
 
 ### update
 
-- updated `display_term` to not change while timer ongoing
-- added prime
+- fixed on timer slow startup
+- implemented a users saved preference settings into `localStorage`
 
-### next update
+##### experiment
+- `autosolve()`
+    -  solves only if `has timer` is checked
+
+### next major update
 <p> to be implimented? </p>
 - https://api.mathjs.org/
 - SymPy Gamma

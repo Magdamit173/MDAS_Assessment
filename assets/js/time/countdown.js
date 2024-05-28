@@ -10,15 +10,18 @@ countdown_number.addEventListener("keyup",async (e) => {
     await asyncOverrideTimer(1.2)
     if (parseFloat(e.target.value) > 10) {
         e_countdown = parseFloat(e.target.value)
+        await setLocalStorage("e_countdown", e_countdown)
     }
     else if (e.target.value.length < 3 && parseFloat(e.target.value) < 10){
         e_countdown = 10
         e.target.value = e_countdown
+        await setLocalStorage("e_countdown", e_countdown)
     }
 
     else if (e.target.value == "") {
         e_countdown = 10
         e.target.value = e_countdown
+        await setLocalStorage("e_countdown", e_countdown)
     }
 })
 
@@ -27,6 +30,13 @@ has_countdown.addEventListener("change",async () => {
         e_score = 0
         DisplayScore(e_score)
         await InitializedScore()
+        await setLocalStorage("has_countdown", 1)
+    }
+    else {
+        e_score = 0
+        DisplayScore(e_score)
+        await InitializedScore()
+        await setLocalStorage("has_countdown", 0)
     }
 })
 
@@ -47,7 +57,9 @@ async function CountDown(seconds) {
         display_input.blur()
         display_term.style.pointerEvents = "auto"
     }, seconds * 1000)
-    await asyncTimer(1)
+
+    // TODO: I wonder why i put asyncTimer Here
+    await asyncTimer(.1)
     countdown_interval_queue = setInterval(async () => {
         await playCountDown()
     }, 1000)

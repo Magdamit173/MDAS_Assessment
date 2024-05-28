@@ -34,6 +34,10 @@ window.onload = function () {
     // localstorage
     OnLoadRequireJS("./assets/js/storage/storage.js")
 
+    // load
+    // countdown.js and app.js first before load.js
+    OnLoadRequireJS("./assets/js/load/load.js")
+
     // Experimental
     
     OnLoadRequireJS("./assets/js/experimental/autosolver.js")
