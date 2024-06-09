@@ -22,11 +22,14 @@ function EvaluateOperation(operation) {
         case "prime":
             configPrime()
         break
+        case "words":
+            configWords()
+        break
     }
 }
 
-function regenerateOperation() {
-    e_assess_operation()
+async function regenerateOperation() {
+    await e_assess_operation()
     
     option_display.textContent = e_text_answer
 }
@@ -45,7 +48,7 @@ display_input.addEventListener("keyup",async (e) => {
         }
 
         add_hlist(`${e_text_answer} = ${e_answer}`)
-        regenerateOperation()
+        await regenerateOperation()
         await playCorrect()
     }
 
@@ -62,7 +65,24 @@ display_input.addEventListener("keyup",async (e) => {
         }
 
         add_hlist(`${e_text_answer} = ${e_answer}`)
-        regenerateOperation()
+        await regenerateOperation()
+        await playCorrect()
+    }
+
+    else if ((typeof e.target.value.toString() === 'string') && (e.target.value.toString() == e_answer.toString())) {
+        
+        e_score += 1
+        DisplayScore(e_score)
+        e.target.value = ""
+
+        if (has_countdown.checked && !is_countdown) {
+            is_countdown = true
+
+            await CountDown(e_countdown)
+        }
+
+        add_hlist(`${e_text_answer} = ${e_answer}`)
+        await regenerateOperation()
         await playCorrect()
     }
 })

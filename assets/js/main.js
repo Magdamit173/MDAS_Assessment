@@ -17,6 +17,7 @@ window.onload = function () {
     OnLoadRequireJS("./assets/js/operation/division.js")
     OnLoadRequireJS("./assets/js/operation/percentage.js")
     OnLoadRequireJS("./assets/js/operation/prime.js")
+    OnLoadRequireJS("./assets/js/operation/words.js")
 
     // evaluate 
     
@@ -37,6 +38,7 @@ window.onload = function () {
     // load
     // countdown.js and app.js first before load.js
     OnLoadRequireJS("./assets/js/load/load.js")
+    OnLoadRequireJS("./assets/js/load/fetch.js")
 
     // Experimental
     

@@ -7,12 +7,13 @@ let isSettingCounter = 0
 let isSettings = false
 let isTutorials = false
 
-nav_settings.addEventListener("click", () => {
+nav_settings.addEventListener("click",async () => {
     if (isSettingCounter == 0) {
         customAlert(`click "Settings" again to exit Settings`, () => {
 
         })
         isSettingCounter += 1
+        await setLocalStorage("isSettingCounter", isSettingCounter)
     }
 
     if (isSettings) settings_wrapper.style.display = "none"

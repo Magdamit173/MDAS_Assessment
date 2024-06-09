@@ -14,5 +14,10 @@
 
     has_countdown.checked = parseInt(await getLocalStorage("has_countdown")) || has_countdown.checked
 
+    // activity.js "isSettingCounter"
 
+    isSettingCounter = parseFloat(await getLocalStorage("isSettingCounter")) || isSettingCounter
+
+    // fetch words
+    // word_list = (await retrieveContent("./assets/lexicon/words.txt")).trim().split("\n")
 })()

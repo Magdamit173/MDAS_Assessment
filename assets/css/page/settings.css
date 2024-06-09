@@ -1,6 +1,7 @@
 .settings_wrapper {
     /* display: block; */
     display: none;
+    z-index: 1;
 
     position: absolute;
     top: 45px;
