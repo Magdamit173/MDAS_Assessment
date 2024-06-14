@@ -1,15 +1,16 @@
 # MDAS_Assessment
 
-- version 0.0.8.4
+- version 0.0.8.5
 
 ### update
 
-- added `typing test (words)` using [dwyl/english-words](https://github.com/dwyl/english-words/blob/master/words.txt)
-- fixed repetitive settings reminder 
+- updated checkbox layout
+- added times table (multiplication only)
 
 ##### experiment
 - `autosolve()`
     -  solves only if `has timer` is checked
+- `word` option
 
 ### next major update
 <p> to be implemented? </p>

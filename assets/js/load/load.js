@@ -20,4 +20,6 @@
 
     // fetch words
     // word_list = (await retrieveContent("./assets/lexicon/words.txt")).trim().split("\n")
+
+    has_times_table.checked = parseInt(await getLocalStorage("has_times_table")) || has_times_table.checked
 })()

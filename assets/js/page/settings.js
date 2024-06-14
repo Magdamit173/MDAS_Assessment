@@ -1,6 +1,7 @@
 const minnumber_input = document.querySelector("#minnumber_input")
 const maxnumber_input = document.querySelector("#maxnumber_input")
 const terms_input = document.querySelector("#terms_input")
+const has_times_table = document.querySelector("#times_table")
 
 
 minnumber_input.value = e_minnumber
@@ -45,4 +46,19 @@ terms_input.addEventListener("keyup",async (e) => {
     }
     
     regenerateOperation()
+})
+
+has_times_table.addEventListener("change",async () => {
+    if (has_countdown.checked) {
+        e_score = 0
+        DisplayScore(e_score)
+        await InitializedScore()
+        await setLocalStorage("has_times_table", 1)
+    }
+    else {
+        e_score = 0
+        DisplayScore(e_score)
+        await InitializedScore()
+        await setLocalStorage("has_times_table", 0)
+    }
 })
