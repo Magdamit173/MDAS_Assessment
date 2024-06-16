@@ -1,15 +1,17 @@
 # MDAS_Assessment
 
-- version 0.0.8.5
+- version 0.0.8.6
 
-### update
+### Update
 
-- updated checkbox layout
-- added times table (multiplication only)
+- minor update to settings layout
+- `times table` replaced by `target number` only implemented to MDAS
+- fixed `target number` unexpected behaviours (formerly known `times table`) 
 
-##### experiment
-- `autosolve()`
+### Experiment Feature
+- `autosolve()` function
     -  solves only if `has timer` is checked
+- `prime` option (buggy)
 - `word` option
 
 ### next major update

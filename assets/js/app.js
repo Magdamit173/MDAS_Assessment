@@ -10,16 +10,19 @@ let e_terms = 2
 
 let e_answer = null
 let e_text_answer = null
-let e_assess_operation = null
+let e_assess_operation = () => console.log("%c No Operation Yet", "color: white; background-color: purple; padding: .3rem; border-radius: 5px") // null
+
+let e_mintarget_number = 1
+let e_maxtarget_number = 9
 
 display_term.addEventListener("click",async () => {
     isSelected = !isSelected
     await isSelectionChanged()
 })
 
-display_term.addEventListener("change", (e) => {
+display_term.addEventListener("change",async (e) => {
     EvaluateOperation(e.target.value)
-    regenerateOperation()
+    await regenerateOperation()
     display_input.focus()
 })
 
