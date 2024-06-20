@@ -36,66 +36,231 @@
         </div>
     </div>
     <div class="settings_wrapper" data-settings_wrapper="">
-        <div class="option_preference_wrapper">
-            <div class="option_sub_wrapper">
-                <label for="minnumber_input">
-                    Minimum Number
-                </label>
-                <input data-minnumber_input="" id="minnumber_input"/>
+        <fieldset class="option_fieldset">
+            <legend>
+                Random Number Selector
+            </legend>
+            <details class="option_details">
+                <summary>
+                    Usage
+                </summary>
+                <h2>
+                    Generate Random Numbers
+                </h2>
+                <ul>
+                    <li>
+                        Mininum Number: Lowest Number To Be Selected
+                    </li>
+                    <li>
+                        Maximum Number: Highest Number To Be Selected
+                    </li>
+                    <li>
+                        Number Of Terms: Amount of Number/s To Be Present
+                    </li>
+                </ul>
+            </details>
+            <div class="option_preference_wrapper">
+                <div class="option_sub_wrapper">
+                    <label for="minnumber_input">
+                        Minimum Number
+                    </label>
+                    <input data-minnumber_input="" id="minnumber_input"/>
+                </div>
+                <div class="option_sub_wrapper">
+                    <label for="maxnumber_input">
+                        Maximum Number
+                    </label>
+                    <input data-maxnumber_input="" id="maxnumber_input"/>
+                </div>
+                <div class="option_sub_wrapper">
+                    <label for="terms_input">
+                        Number of Terms
+                    </label>
+                    <input data-terms_input="" id="terms_input"/>
+                </div>
             </div>
-            <div class="option_sub_wrapper">
-                <label for="maxnumber_input">
-                    Maximum Number
-                </label>
-                <input data-maxnumber_input="" id="maxnumber_input"/>
-            </div>
-            <div class="option_sub_wrapper">
-                <label for="terms_input">
-                    Number of Terms
-                </label>
-                <input data-terms_input="" id="terms_input"/>
-            </div>
-        </div>
-
+        </fieldset>
         <hr>
-
-        <div class="option_preference_wrapper">
-            <div class="option_checkbox_wrapper">
-                <label for="target_number">
-                    Target Number
-                </label>
-                <input data-target_number="" id="target_number" type="checkbox"/>
+        <fieldset class="option_fieldset">
+            <legend>
+                Number Types
+            </legend>
+            <details class="option_details">
+                <summary>
+                    Usage
+                </summary>
+                <h2>
+                    Set Number Types
+                </h2>
+                <ul>
+                    <li>
+                        Steps: Depends On "Random Number Selector" Ranges, 0 Means No Effect
+                    </li>
+                    <li>
+                        Set To: Set if Either it Stays Integer or Float/Decimal
+                    </li>
+                </ul>
+            </details>
+            <div class="option_preference_wrapper">
+                <div class="option_sub_wrapper">
+                    <label for="number_steps">
+                        Steps
+                    </label>
+                    <input data-number_steps="" id="number_steps"/>
+                </div>
+                <div class="option_sub_wrapper">
+                    <label for="number_type">
+                        Set To: 
+                    </label>
+                    <select id="number_type">
+                        <option value="Integer" selected>Integer</option>
+                        <option value="Float">Float</option>
+                    </select>
+                </div>
             </div>
-            <div class="option_sub_wrapper">
-                <label for="mintarget_input">
-                    Minimum Target Number
-                </label>
-                <input data-mintarget_input="" id="mintarget_input"/>
-            </div>
-            <div class="option_sub_wrapper">
-                <label for="maxtarget_input">
-                    Maximum Target Number
-                </label>
-                <input data-maxtarget_input="" id="maxtarget_input"/>
-            </div>
-        </div>
-
+        </fieldset>
         <hr>
-
-        <div class="option_preference_wrapper">
-            <div class="option_checkbox_wrapper">
-                <label for="has_countdown">
-                    Has Timer
-                </label>
-                <input data-has_countdown="" id="has_countdown" type="checkbox"/>
+        <fieldset class="option_fieldset">
+            <legend>
+                Target Number Selector
+            </legend>
+            <details class="option_details">
+                <summary>
+                    Usage
+                </summary>
+                <h2>
+                    Generate Random Target Numbers
+                </h2>
+                <p>
+                    description: Usually Implemented to MDAS (multiplication, division, addition, and subtraction)
+                </p>
+                <p>
+                    Only And Usually The Last Term/Number Was Replaced By This. With Little Difference For Multiplication Which Is Reverse (The Front Was Replaced)
+                </p>
+                <ul>
+                    <li>
+                        Target Number: Activate "Target Number Selector"
+                    </li>
+                    <li>
+                        Mininum Target Number: Lowest Number To Be Selected
+                    </li>
+                    <li>
+                        Maximum Target Number: Highest Number To Be Selected
+                    </li>
+                </ul>
+            </details>
+            <div class="option_preference_wrapper">
+                <div class="option_checkbox_wrapper">
+                    <label for="target_number">
+                        Target Number
+                    </label>
+                    <input data-target_number="" id="target_number" type="checkbox"/>
+                </div>
+                <div class="option_sub_wrapper">
+                    <label for="mintarget_input">
+                        Minimum Target Number
+                    </label>
+                    <input data-mintarget_input="" id="mintarget_input"/>
+                </div>
+                <div class="option_sub_wrapper">
+                    <label for="maxtarget_input">
+                        Maximum Target Number
+                    </label>
+                    <input data-maxtarget_input="" id="maxtarget_input"/>
+                </div>
             </div>
-            <div class="option_sub_wrapper">
-                <label for="countdown_number">
-                    Countdown Number (By Seconds)
-                </label>
-                <input data-countdown_number="" id="countdown_number"/>
+        </fieldset>
+        <hr>
+        <fieldset class="option_fieldset">
+            <legend>
+                Countdown
+            </legend>
+            <details class="option_details">
+                <summary>
+                    Usage
+                </summary>
+                <h2>
+                    Countdown
+                </h2>
+                <ul>
+                    <li>
+                        Has Timer: Activate `Countdown`
+                    </li>
+                    <li>
+                        Countdown Number (By Seconds Min: 10 secs): Usually Can Be Set To Any Seconds, But After The Countdown Is Finish It Would Prompt Your Solving Rate Per Minute
+                    </li>
+                </ul>
+            </details>
+            <div class="option_preference_wrapper">
+                <div class="option_checkbox_wrapper">
+                    <label for="has_countdown">
+                        Has Timer
+                    </label>
+                    <input data-has_countdown="" id="has_countdown" type="checkbox"/>
+                </div>
+                <div class="option_sub_wrapper">
+                    <label for="countdown_number">
+                        Countdown Number (By Seconds)
+                    </label>
+                    <input data-countdown_number="" id="countdown_number"/>
+                </div>
             </div>
-        </div>
+        </fieldset>
+        <hr>
+        
+        <fieldset class="option_fieldset">
+            <legend>
+                Audio Settings
+            </legend>
+            <details class="option_details">
+                <summary>
+                    Usage
+                </summary>
+                <h2>
+                    Audio Settings! (still buggy)
+                </h2>
+                <ul>
+                    <li>
+                        Answer Queue: Enabled/Disabled Answer Queue Sounds
+                    </li>
+                    <li>
+                        Answer Queue Volume: Answer Queue's Volume Configure Between 0 and 1 Only
+                    </li>
+                    <li>
+                        Countdown Queue: Enabled/Disabled Countdown Queue Sounds
+                    </li>
+                    <li>
+                        Countdown Queue Volume: Countdown Queue's Volume Configure Between 0 and 1 Only
+                    </li>
+                </ul>
+            </details>
+            <div class="option_preference_wrapper">
+                <div class="option_checkbox_wrapper">
+                    <label for="answer_queue">
+                        Answer Queue
+                    </label>
+                    <input data-="answer_queue" id="answer_queue" type="checkbox"/>
+                </div>
+                <div class="option_sub_wrapper">
+                    <label for="answer_queue_volume">
+                        Answer Queue Volume
+                    </label>
+                    <input data-answer_queue_volume="" id="answer_queue_volume" placeholder="between 0 and 1"/>
+                </div>
+                <div class="option_checkbox_wrapper">
+                    <label for="countdown_queue">
+                        Countdown Queue
+                    </label>
+                    <input data-="countdown_queue" id="countdown_queue" type="checkbox"/>
+                </div>
+                <div class="option_sub_wrapper">
+                    <label for="countdown_queue_volume">
+                        Countdown Queue Volume
+                    </label>
+                    <input data-countdown_queue_volume="" id="countdown_queue_volume" placeholder="between 0 and 1"/>
+                </div>
+            </div>
+        </fieldset>
     </div>
     <div class="main_wrapper">
         <div class="display_score" data-display_score="">

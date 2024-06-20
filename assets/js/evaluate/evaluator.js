@@ -34,6 +34,12 @@ async function regenerateOperation() {
     option_display.textContent = e_text_answer
 }
 
+function configuredRandom(min, max) {
+    if (e_number_type == "Integer") return randint(min, max)
+    else if (e_number_type == "Float" && e_number_steps !== 0) return Math.round((Math.round(random(min, max) / e_number_steps) * e_number_steps + Number.EPSILON) * 100) / 100
+    else if (e_number_type == "Float" && e_number_steps === 0) return Math.round((random(min, max) + Number.EPSILON) * 100) / 100
+}
+
 display_input.addEventListener("keyup",async (e) => {
     if (parseFloat(e.target.value) == parseFloat(e_answer)) {
 

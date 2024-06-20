@@ -6,12 +6,18 @@ const has_target_number = document.querySelector("#target_number")
 const mintarget_input = document.querySelector("#mintarget_input")
 const maxtarget_input = document.querySelector("#maxtarget_input")
 
+const number_steps = document.querySelector("#number_steps")
+const number_type = document.querySelector("#number_type")
+
 minnumber_input.value = e_minnumber
 maxnumber_input.value = e_maxnumber
 terms_input.value = e_terms
 
 mintarget_input.value = e_mintarget_number
 maxtarget_input.value = e_maxtarget_number
+
+number_steps.value = e_number_steps
+number_type.value = e_number_type
 
 minnumber_input.addEventListener("keyup",async (e) => {
     e_minnumber = parseFloat(e.target.value)
@@ -94,6 +100,35 @@ maxtarget_input.addEventListener("keyup",async (e) => {
         e_maxtarget_number = 9
         e.target.value = e_maxtarget_number
         await setLocalStorage("e_maxtarget_number", e_maxtarget_number)
+    }
+    
+    await regenerateOperation()
+})
+
+number_steps.addEventListener("keyup",async (e) => {
+    e_number_steps = parseFloat(e.target.value)
+
+    await setLocalStorage("e_number_steps", e_number_steps)
+    await asyncOverrideTimer(.3)
+    if (!parseFloat(e.target.value)) {
+        e_number_steps = 0
+        e.target.value = e_number_steps
+        await setLocalStorage("e_number_steps", e_number_steps)
+    }
+    
+    await regenerateOperation()
+})
+
+
+number_type.addEventListener("change",async (e) => {
+    e_number_type = e.target.value
+
+    await setLocalStorage("e_number_type", e_number_type)
+    await asyncOverrideTimer(.3)
+    if (!(e.target.value)) {
+        e_number_type = "Integer"
+        e.target.value = e_number_type
+        await setLocalStorage("e_number_type", e_number_type)
     }
     
     await regenerateOperation()

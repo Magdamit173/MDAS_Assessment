@@ -3,6 +3,10 @@ const display_term = document.querySelector("[data-display_term]")
 const display_input = document.querySelector("[data-display_input]")
 const option_display = document.querySelector("[data-option_display]")
 
+setTimeout(() => {
+    settings_wrapper.scrollTo(0, settings_wrapper.scrollHeight)
+}, 0.200) // temporary
+
 let isSelected = false
 let e_minnumber = -9
 let e_maxnumber = 9
@@ -14,6 +18,14 @@ let e_assess_operation = () => console.log("%c No Operation Yet", "color: white;
 
 let e_mintarget_number = 1
 let e_maxtarget_number = 9
+
+let e_number_steps = 0
+let e_number_type = "Integer"
+
+let e_answer_queue_volume = .6
+let e_answer_queue = 1
+let e_countdown_queue_volume = 1
+let e_countdown_queue = 1
 
 display_term.addEventListener("click",async () => {
     isSelected = !isSelected

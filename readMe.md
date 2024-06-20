@@ -1,12 +1,12 @@
 # MDAS_Assessment
 
-- version 0.0.8.6
+- version 0.0.8.7
 
 ### Update
 
 - minor update to settings layout
-- `times table` replaced by `target number` only implemented to MDAS
-- fixed `target number` unexpected behaviours (formerly known `times table`) 
+- added `Number Types` implemented only to MDAS (multiplication, division, addition, subtraction)
+- added `Audio Settings` for better Audio Management. (still buggy)
 
 ### Experiment Feature
 - `autosolve()` function
