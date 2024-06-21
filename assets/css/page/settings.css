@@ -41,13 +41,13 @@ hr {
 .option_fieldset > legend {
     padding: .6rem 1rem;
     font-size: 1.1rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     text-align: start;
 }
 
 .option_details > summary {
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 1rem;
 }
@@ -62,7 +62,7 @@ hr {
     border-radius: 5px;
     padding: 1rem;
     color: indianred;
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
 }
 
@@ -74,7 +74,7 @@ hr {
     padding: 1rem;
     color: indianred;
 
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: .95rem;
 }
@@ -102,8 +102,8 @@ hr {
 }
 
 .option_sub_wrapper > * {
-    font-family: monospace;
-    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-weight: 700; */
     font-size: 1.1rem;
     text-align: center;
     padding: 1rem;
@@ -172,7 +172,7 @@ hr {
     padding: 1rem;
     margin: 5px;
     font-size: .8rem;
-    font-family: cursive;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .option_checkbox_wrapper  > input {

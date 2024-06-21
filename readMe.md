@@ -1,12 +1,11 @@
 # MDAS_Assessment
 
-- version 0.0.8.7
+- version 0.0.8.8
 
 ### Update
 
 - minor update to settings layout
-- added `Number Types` implemented only to MDAS (multiplication, division, addition, subtraction)
-- added `Audio Settings` for better Audio Management. (still buggy)
+- bugs still not fixed
 
 ### Experiment Feature
 - `autosolve()` function
