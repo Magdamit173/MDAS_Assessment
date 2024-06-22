@@ -14,7 +14,8 @@ function assessBySubtraction() {
         }
     }
 
-    e_answer = terms.slice(1, terms.length + 2).reduce((accumulator, currentValue) => accumulator - currentValue, terms[0]) 
+    const answer = terms.slice(1, terms.length + 2).reduce((accumulator, currentValue) => accumulator - currentValue, terms[0]) 
+    e_answer = Math.round((answer + Number.EPSILON) * 100) / 100
     e_text_answer = terms.map(p => {
         return p < 0 ? `(${p})`: p
     }).join(" - ")

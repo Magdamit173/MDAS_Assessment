@@ -1,11 +1,11 @@
 # MDAS_Assessment
 
-- version 0.0.8.8
+- version 0.0.8.9
 
 ### Update
 
 - minor update to settings layout
-- bugs still not fixed
+- `audio settings` fixed
 
 ### Experiment Feature
 - `autosolve()` function

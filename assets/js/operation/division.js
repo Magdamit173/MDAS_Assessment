@@ -24,7 +24,8 @@ function assessByDivision() {
     }
 
     non_infinite_answer = any_term[any_term.length - 1]
-    e_answer = (!isNaN(first_term)) ? non_infinite_answer : NaN
+    const answer = (!isNaN(first_term)) ? non_infinite_answer : NaN
+    e_answer = Math.round((answer + Number.EPSILON) * 100) / 100
     e_text_answer = `${c_first_term} / ${any_term.slice(0, any_term.length - 1, 1).join(" / ")}`
 }
 

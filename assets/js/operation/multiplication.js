@@ -14,7 +14,8 @@ function assessByMultiplication() {
         }
     }
 
-    e_answer = terms.reduce((accumulator, currentValue) => accumulator * currentValue, 1) 
+    const answer = terms.reduce((accumulator, currentValue) => accumulator * currentValue, 1) 
+    e_answer = Math.round((answer + Number.EPSILON) * 100) / 100
     e_text_answer = terms.reverse().join(" x ")
 }
 

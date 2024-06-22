@@ -14,7 +14,8 @@ function assessByAddition() {
         }
     }
 
-    e_answer = terms.reduce((accumulator, currentValue) => accumulator + currentValue, 0) 
+    const answer = terms.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+    e_answer = Math.round((answer + Number.EPSILON) * 100) / 100
     e_text_answer = terms.map(p => {
         return p < 0 ? `(${p})`: p
     }).join(" + ")

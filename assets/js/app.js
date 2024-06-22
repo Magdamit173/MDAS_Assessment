@@ -8,7 +8,7 @@ setTimeout(() => {
 }, 0.200) // temporary
 
 let isSelected = false
-let e_minnumber = -9
+let e_minnumber = 1
 let e_maxnumber = 9
 let e_terms = 2
 
@@ -22,10 +22,10 @@ let e_maxtarget_number = 9
 let e_number_steps = 0
 let e_number_type = "Integer"
 
-let e_answer_queue_volume = .6
-let e_answer_queue = 1
-let e_countdown_queue_volume = 1
-let e_countdown_queue = 1
+let e_has_answer_queue = 1
+let e_has_countdown_queue = 1
+let e_answer_queue_volume = 60
+let e_countdown_queue_volume = 100
 
 display_term.addEventListener("click",async () => {
     isSelected = !isSelected

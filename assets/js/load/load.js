@@ -31,13 +31,20 @@
 
     has_target_number.checked = parseInt(await getLocalStorage("has_target_number")) || has_target_number.checked
 
+
+
     e_answer_queue_volume = parseFloat(await getLocalStorage("e_answer_queue_volume")) || e_answer_queue_volume
     e_countdown_queue_volume = parseFloat(await getLocalStorage("e_countdown_queue_volume")) || e_countdown_queue_volume
 
-    answerQueueVolume.value = e_answer_queue_volume
-    countdownQueueVolume.value = e_countdown_queue_volume
+    answer_queue_volume.value = e_answer_queue_volume
+    countdown_queue_volume.value = e_countdown_queue_volume
 
     // TODO unexpected behaviour
-    answerQueue.checked = parseInt(await getLocalStorage("e_answer_queue")) 
-    countdownQueue.checked = parseInt(await getLocalStorage("e_countdown_queue")) 
+
+    const is_answer_queue_muted = parseInt(await getLocalStorage("e_has_answer_queue"))
+    const is_countdown_queue_muted = parseInt(await getLocalStorage("e_has_countdown_queue"))
+    has_answer_queue.checked = is_answer_queue_muted
+    has_countdown_queue.checked = is_countdown_queue_muted
+    correct_audio_source.muted = !is_answer_queue_muted
+    has_countdown_queue.muted = !is_countdown_queue_muted
 })()
