@@ -1,11 +1,10 @@
 # MDAS_Assessment
 
-- version 0.0.8.9
+- version 0.0.8.9.1
 
 ### Update
 
-- minor update to settings layout
-- `audio settings` fixed
+- enhance multplication tutorial 
 
 ### Experiment Feature
 - `autosolve()` function

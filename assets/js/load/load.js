@@ -45,6 +45,6 @@
     const is_countdown_queue_muted = parseInt(await getLocalStorage("e_has_countdown_queue"))
     has_answer_queue.checked = isNaN(is_answer_queue_muted) ? 1 : is_answer_queue_muted
     has_countdown_queue.checked = isNaN(is_countdown_queue_muted) ? 1: is_countdown_queue_muted
-    correct_audio_source.muted = !is_answer_queue_muted
-    has_countdown_queue.muted = !is_countdown_queue_muted
+    correct_audio_source.muted = isNaN(is_countdown_queue_muted) ? 0 : !is_answer_queue_muted
+    has_countdown_queue.muted = isNaN(is_countdown_queue_muted) ? 0: !is_countdown_queue_muted
 })()

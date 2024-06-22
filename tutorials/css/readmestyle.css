@@ -53,3 +53,11 @@ body {
     color: skyblue;
     text-decoration-color: skyblue;
 }
+
+.markdown-body red {
+    color: rgb(245, 78, 0);
+}
+
+.markdown-body blue {
+    color: rgb(40, 176, 230);
+}
