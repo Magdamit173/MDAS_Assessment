@@ -36,8 +36,12 @@ async function regenerateOperation() {
 
 function configuredRandom(min, max) {
     if (e_number_type == "Integer") return randint(min, max)
-    else if (e_number_type == "Float" && e_number_steps !== 0) return Math.round((Math.round(random(min, max) / e_number_steps) * e_number_steps + Number.EPSILON) * 100) / 100
-    else if (e_number_type == "Float" && e_number_steps === 0) return Math.round((random(min, max) + Number.EPSILON) * 100) / 100
+    else if (e_number_type == "Float" && e_number_steps !== 0) return sanitizeFloat(Math.round(random(min, max) / e_number_steps) * e_number_steps)
+    else if (e_number_type == "Float" && e_number_steps === 0) return sanitizeFloat(random(min, max))
+}
+
+function sanitizeFloat(number) {
+    return Math.round((number + Number.EPSILON) * 100) / 100
 }
 
 display_input.addEventListener("keyup",async (e) => {

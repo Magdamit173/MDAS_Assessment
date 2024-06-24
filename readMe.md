@@ -1,10 +1,11 @@
 # MDAS_Assessment
 
-- version 0.0.8.9.1
+- version 0.0.8.9.2
 
 ### Update
 
-- enhance multplication tutorial 
+- fix layout edition
+- calculator feature in the future
 
 ### Experiment Feature
 - `autosolve()` function

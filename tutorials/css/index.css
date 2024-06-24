@@ -64,19 +64,53 @@ a {
     font-size: 1.1rem;
 }
 
+.tutorial_block_container {
+    display: grid;
+    place-items: center;
+    place-content: center;
+    grid-template-columns: repeat(auto-fill, clamp(100px, 18vw, 180px));
+    margin: 2rem;
+
+    gap: 1rem;
+
+}
+
 .tutorial_block {
-    display: block;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 1rem;
 
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.3rem;
+    font-size: clamp(.8rem, 1.5vw, 1.4rem);
+    height: clamp(100px, 18vw, 180px);
+    width: clamp(100px, 18vw, 180px);
     /* text-transform: uppercase; */
-    max-width: 80dvw;
+    aspect-ratio: 1;
 
-    margin: 1rem auto;
-    background-color: indianred;
-    color: white;
-    text-shadow: 1px 1px 1px black;
+    /* margin: 1rem auto; */
+    background-color: aliceblue;
+    color: indianred;
+    border: solid 3px indianred;
+    /* text-shadow: 1px 1px 1px indianred; */
+    font-weight: 700;
     border-radius: 14px;
+    
+    transition: all .25s ease;
+}
+
+.tutorial_block:hover {
+    scale: 1.1;
+    background-color: indianred;
+    color: aliceblue;
+    border-color: white;
+}
+
+hr {
+    outline: none;
+    border: solid 0 none;
+    background-color: indianred;
+    margin: 1.5rem;
 }

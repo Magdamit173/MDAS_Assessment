@@ -25,7 +25,7 @@ minnumber_input.addEventListener("keyup",async (e) => {
     await setLocalStorage("e_minnumber", e_minnumber)
     await asyncOverrideTimer(.3)
     if (!parseFloat(e.target.value)) {
-        e_minnumber = -9
+        e_minnumber = 1
         e.target.value = e_minnumber
         await setLocalStorage("e_minnumber", e_minnumber)
     }

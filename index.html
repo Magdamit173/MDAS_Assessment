@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="./assets/css/tab/customAlert.css">
     <link rel="stylesheet" href="./assets/css/page/settings.css">
-    <link rel="stylesheet" href="./assets/css/page/tutorials.css">
+    <link rel="stylesheet" href="./assets/css/page/calculator.css">
 
     <link rel="icon" href="./assets/favicon/icon.png">
     
@@ -28,6 +28,9 @@
 </head>
 <body>
     <div class="nav_bar">
+        <div class="nav_calculator" data-nav_calculator=""> 
+            Calculator
+        </div>
         <div class="nav_tutorials" data-nav_tutorials="">
             Tutorials
         </div>
@@ -266,22 +269,56 @@
         <div class="display_score" data-display_score="">
             0
         </div>
-        <div class="solving_bar" data-solving_bar="">
+        <div class="multiswitch_bar" data-multiswitch_bar="">
             <!-- <input class="display_term" data-display_term /> -->
+            <div class="solving_bar" data-solving_bar="" >
+                <select class="display_term" name="display_term" data-display_term id="display_term">
+                    <option data-option_display="" value="option_display">&lt; option &gt;</option>
+                    
+                    <option value="addition">addition</option>
+                    <option value="subtraction">subtraction</option>
+                    <option value="multiplication">multiplication</option>
+                    <option value="division">division (bug)</option>
+                    <option value="percentage">percentage</option>
+                    <option value="prime">prime (experimental)</option>
+                    <option value="words">words (experimental)</option>
+                </select>
+                <input class="display_input" data-display_input="" value="" placeholder="Here..."/>
+            </div>
+            <div class="calculator_bar" style="display: none;">
+                <div class="lcd">
+                    <div class="lcd_big">
+                        32423
+                    </div>
+                    <div class="lcd_small">
+                        2344
+                    </div>
+                </div>
+                <div class="event_wrapper">
+                    <div data-reset_event="">AC</div>
+                    <div data-backspace_event="">&#8592;</div>
+                    <div data-switchinteger_event="">+/-</div>
+                    <div data-sign_event="">÷</div>
+                    <div data-number_event="">7</div>
+                    <div data-number_event="">8</div>
+                    <div data-number_event="">9</div>
+                    <div data-sign_event="">x</div>
+                    <div data-number_event="">4</div>
+                    <div data-number_event="">5</div>
+                    <div data-number_event="">6</div>
+                    <div data-sign_event="">-</div>
+                    <div data-number_event="">1</div>
+                    <div data-number_event="">2</div>
+                    <div data-number_event="">3</div>
+                    <div data-sign_event="">+</div>
+                    <div data-sign_event="">%</div>
+                    <div data-number_event="">0</div>
+                    <div data-number_event="">.</div>
+                    <div>=</div>
+                </div>
+            </div>
 
-            <select class="display_term" name="display_term" data-display_term id="display_term">
-                <option data-option_display="" value="option_display">&lt; option &gt;</option>
-                
-                <option value="addition">addition</option>
-                <option value="subtraction">subtraction</option>
-                <option value="multiplication">multiplication</option>
-                <option value="division">division (bug)</option>
-                <option value="percentage">percentage</option>
-                <option value="prime">prime (experimental)</option>
-                <option value="words">words (experimental)</option>
-            </select>
 
-            <input class="display_input" data-display_input="" value="" placeholder="Here..."/>
         </div>
         <div class="history_bar" data-history_bar>
             <div class="history_bar_label">
