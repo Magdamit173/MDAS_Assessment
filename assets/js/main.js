@@ -27,7 +27,7 @@ window.onload = function () {
     // page
     OnLoadRequireJS("./assets/js/page/activity.js")
     OnLoadRequireJS("./assets/js/page/settings.js")
-    OnLoadRequireJS("./assets/js/page/tutorials.js")
+    OnLoadRequireJS("./assets/js/page/calculator.js")
 
     // audio
     OnLoadRequireJS("./assets/js/audio/audio.js")

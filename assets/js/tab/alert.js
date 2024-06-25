@@ -54,10 +54,10 @@ function customAlert(text, callback) {
 //     else window.close()
 // })
 
-if (window.innerWidth <= 640) {
-    customAlert("Sorry, Desktop Supported Website, Proceed to Continue?", (cancel, confirm) => {
-        cancel(() => {
-            close()
-        })
-    })
-}
+// if (window.innerWidth <= 640) {
+//     customAlert("Sorry, Desktop Supported Website, Proceed to Continue?", (cancel, confirm) => {
+//         cancel(() => {
+//             close()
+//         })
+//     })
+// }

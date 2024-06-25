@@ -1,11 +1,10 @@
 # MDAS_Assessment
 
-- version 0.0.8.9.2
+- version 0.0.8.9.3
 
 ### Update
 
-- fix layout edition
-- calculator feature in the future
+- hidden feature added
 
 ### Experiment Feature
 - `autosolve()` function

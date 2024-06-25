@@ -3,9 +3,9 @@ const display_term = document.querySelector("[data-display_term]")
 const display_input = document.querySelector("[data-display_input]")
 const option_display = document.querySelector("[data-option_display]")
 
-setTimeout(() => {
-    settings_wrapper.scrollTo(0, settings_wrapper.scrollHeight)
-}, 0.200) // temporary
+// setTimeout(() => {
+//     settings_wrapper.scrollTo(0, settings_wrapper.scrollHeight)
+// }, 0.200) // temporary
 
 let isSelected = false
 let e_minnumber = 1
