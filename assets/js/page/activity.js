@@ -7,18 +7,17 @@ const solving_bar = document.querySelector("[data-solving_bar]")
 const calculator_bar = document.querySelector("[data-calculator_bar]")
 
 // temporary isSettingCounter
-let isSettingCounter = 0
 let isSettings = false
 let isTutorials = false
 let isSwitch = 0
 
 nav_settings.addEventListener("click",async () => {
-    if (isSettingCounter == 0) {
-        customAlert(`click "Settings" again to exit Settings`, () => {
-
+    if (!await getLocalStorage("isSettingCounter")) {
+        customAlert(`click "Settings" again to exit Settings`,async (cancel, confirm) => {
+            confirm(async () => {
+                await setLocalStorage("isSettingCounter", true)
+            })
         })
-        isSettingCounter += 1
-        await setLocalStorage("isSettingCounter", isSettingCounter)
     }
 
     if (isSettings) settings_wrapper.style.display = "none"
@@ -37,13 +36,14 @@ nav_tutorials.addEventListener("click", () => {
     // isTutorials = true
 })
 
-nav_calculator.addEventListener("click", () => {
-    customAlert("Unavailable Calculator, On Maintenance", () => {
-        nav_calculator.remove()
-
-        solving_bar.style.display = "flex"
-        calculator_bar.style.display  = "none"
-    })
+nav_calculator.addEventListener("click",async () => {
+    if (!(await getLocalStorage("calculator"))) {
+        customAlert("Still Buggy Hope You Like It",async (cancel, confirm) => {
+            confirm(async () => {
+                await setLocalStorage("calculator", 1)
+            })
+        })
+    }
 
     if (isSwitch) {
         solving_bar.style.display = "flex"

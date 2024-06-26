@@ -22,9 +22,8 @@
     <meta property="og:image:height" content="512"> -->
 
 
-    <script src="./assets/js/main.js" defer>
-
-    </script>
+    <script src="./assets/js/main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.js" defer></script>
 </head>
 <body>
     <div class="nav_bar">
@@ -297,7 +296,9 @@
                 <div class="event_wrapper">
                     <div data-reset_event="">AC</div>
                     <div data-backspace_event="">&#8592;</div>
-                    <div data-switchinteger_event="">+/-</div>
+                    <div data-switchinteger_event="">
+                        <!-- +/- --> 
+                    </div>
                     <div data-sign_event="">÷</div>
                     <div data-number_event="">7</div>
                     <div data-number_event="">8</div>
@@ -320,7 +321,7 @@
 
 
         </div>
-        <div class="history_bar" data-history_bar>
+        <div class="history_bar" data-history_bar >
             <div class="history_bar_label">
                 Recent History
             </div>
