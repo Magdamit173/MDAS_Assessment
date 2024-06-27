@@ -63,6 +63,9 @@ body {
     font-weight: 700;
     padding: 1.3rem calc(1rem + 2.7vw);
 }
+.nav_bar div {
+    transition: all .2s ease;
+}
 
 .main_wrapper {
     display: flex;

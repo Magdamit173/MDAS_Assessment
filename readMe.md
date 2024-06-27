@@ -1,10 +1,11 @@
 # MDAS_Assessment
 
-- version 0.0.8.9.4
+- version 0.0.8.9.5
 
 ### Update
 
-- updated calculator using [`mathjs`](https://cdnjs.com/libraries/mathjs) (still buggy) # i won't touch it 😭
+- added `Miscellaneous`
+- some changes on layout
 
 ### Experiment Feature
 - `autosolve()` function

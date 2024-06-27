@@ -1,3 +1,6 @@
+const survey = document.querySelector("#survey")
+const reset_preference = document.querySelector("#reset_preference")
+
 const minnumber_input = document.querySelector("#minnumber_input")
 const maxnumber_input = document.querySelector("#maxnumber_input")
 const terms_input = document.querySelector("#terms_input")
@@ -18,6 +21,28 @@ maxtarget_input.value = e_maxtarget_number
 
 number_steps.value = e_number_steps
 number_type.value = e_number_type
+
+survey.addEventListener("click",async () => {
+    const formlink = "https://forms.gle/D1jWEjL1DiuMMvps5"
+
+    if (!await getLocalStorage("survey")) {
+        customAlert("Do You Want To Suggest A Feature?", (cancel, sure) => {
+            sure(async () => {
+                await setLocalStorage("survey")
+                open(formlink)
+            }) 
+        })
+    }
+    else open(formlink)
+})
+reset_preference.addEventListener("click",async () => {
+    customAlert("Are you sure to reset your Saved Preference?", (cancel, sure) => {
+        sure(async () => {
+            localStorage.clear()
+            location.reload()
+        })
+    })
+})
 
 minnumber_input.addEventListener("keyup",async (e) => {
     e_minnumber = parseFloat(e.target.value)
