@@ -36,6 +36,8 @@ display_term.addEventListener("change",async (e) => {
     EvaluateOperation(e.target.value)
     await regenerateOperation()
     display_input.focus()
+
+    await processTables(e_minnumber, e_maxnumber, wordToSign(s_operation))
 })
 
 display_term.addEventListener("blur",async () => {

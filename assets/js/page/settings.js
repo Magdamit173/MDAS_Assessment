@@ -55,6 +55,7 @@ minnumber_input.addEventListener("keyup",async (e) => {
         await setLocalStorage("e_minnumber", e_minnumber)
     }
 
+    await processTables(e_minnumber, e_maxnumber, wordToSign(s_operation))
     await regenerateOperation()
 })
 maxnumber_input.addEventListener("keyup",async (e) => {
@@ -67,7 +68,8 @@ maxnumber_input.addEventListener("keyup",async (e) => {
         e.target.value = e_maxnumber
         await setLocalStorage("e_maxnumber", e_maxnumber)
     }
-    
+
+    await processTables(e_minnumber, e_maxnumber, wordToSign(s_operation))
     await regenerateOperation()
 })
 

@@ -1,0 +1,45 @@
+
+.equation_table_wrapper {
+    position: absolute;
+    top: 45px;
+    z-index: 2;
+    flex-wrap: wrap;
+    
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(0.7rem, 5dvw, 5dvw) clamp(0.7rem, 5dvw, 5dvw);
+
+    background-color: white;
+    width: 100dvw;
+    height: calc(100dvh - 45px);
+
+    overflow-y: scroll;
+    gap: 2rem;
+}
+
+.equation_card {
+    font-family: monospace;
+    font-size: 1.2rem;
+    
+    border: solid 1px indianred;
+    height: 355.555555556px;
+    width: 200px;
+    max-height: 355.555555556px;
+    max-width: 200px;
+    padding: 1rem;
+    overflow-y: scroll;
+}
+
+.equation_card * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid 1px indianred; */
+    text-align: center;
+}
+
+.equation_card * end {
+    color: skyblue;
+}

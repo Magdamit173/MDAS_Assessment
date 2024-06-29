@@ -1,5 +1,13 @@
 let timeoutID
 
+// alias of asyncTimer
+function sleep(seconds) {
+    return new Promise((resolve, reject) => {
+        if (seconds) setTimeout(() => resolve(), seconds * 1000)
+        else reject()
+    })
+}
+
 function asyncTimer(seconds) {
     return new Promise((resolve, reject) => {
         if (seconds) setTimeout(() => resolve(), seconds * 1000)

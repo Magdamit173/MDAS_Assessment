@@ -10,6 +10,9 @@ window.onload = function () {
     OnLoadRequireJS("./assets/js/time/countdown.js")
     OnLoadRequireJS("./assets/js/tab/alert.js")
 
+    // tables
+    OnLoadRequireJS("./assets/js/table/table.js")
+
     // operation
     OnLoadRequireJS("./assets/js/operation/addition.js")
     OnLoadRequireJS("./assets/js/operation/subtraction.js")

@@ -1,6 +1,7 @@
 const nav_tutorials = document.querySelector("[data-nav_tutorials]")
 const nav_settings = document.querySelector("[data-nav_settings]")
 const nav_calculator = document.querySelector("[data-nav_calculator]")
+const nav_table = document.querySelector("[data-nav_table]")
 const settings_wrapper = document.querySelector("[data-settings_wrapper]")
 
 const solving_bar = document.querySelector("[data-solving_bar]")
@@ -13,6 +14,7 @@ let isSettings = false
 let isTutorials = false
 let isSwitch = 0
 let isCollapse = false
+let isTable = false
 
 nav_settings.addEventListener("click",async () => {
     if (!await getLocalStorage("isSettingCounter")) {
@@ -27,6 +29,10 @@ nav_settings.addEventListener("click",async () => {
     else settings_wrapper.style.display = "block"
     
     isSettings = !isSettings
+    
+    // table
+    equation_table_wrapper.style.display = "none"
+    isTable = false
 })
 
 // TODO change this eventlistener on the future
@@ -58,6 +64,33 @@ nav_calculator.addEventListener("click",async () => {
     }
     
     isSwitch = !isSwitch
+
+    // table
+    equation_table_wrapper.style.display = "none"
+    isTable = false
+})
+
+// TODO: we're gonna have a global click priority in which one click would shut other nav_bar's, has table trigger at `nav_settings` and `nav_calculator`
+nav_table.addEventListener("click",async () => {
+    if (!(await getLocalStorage("table"))) {
+        customAlert("These Tables Are Based On `Random Number Selector` Located At Settings",async (cancel, sure) => {
+            await setLocalStorage("table", 1)
+            customAlert("Experimental Feature :)",async (cancel, sure) => {
+
+            })
+        })
+    }
+
+    if (isTable) {
+        equation_table_wrapper.style.display = "none"
+
+        isTable = false
+    }
+    else {
+        equation_table_wrapper.style.display = "flex"
+
+        isTable = true
+    }
 })
 
 history_collapse.addEventListener("click", () => {
