@@ -1,10 +1,9 @@
 # MDAS_Assessment
 
-- version 0.0.8.9.5
+- version 0.0.8.9.6
 
 ### Update
 
-- added `Miscellaneous`
 - some changes on layout
 
 ### Experiment Feature

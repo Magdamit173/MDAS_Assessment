@@ -6,10 +6,13 @@ const settings_wrapper = document.querySelector("[data-settings_wrapper]")
 const solving_bar = document.querySelector("[data-solving_bar]")
 const calculator_bar = document.querySelector("[data-calculator_bar]")
 
-// temporary isSettingCounter
+const history_collapse = document.querySelector("[data-history_collapse]").children[0]
+const history_bar = document.querySelector("[data-history_bar]")
+
 let isSettings = false
 let isTutorials = false
 let isSwitch = 0
+let isCollapse = false
 
 nav_settings.addEventListener("click",async () => {
     if (!await getLocalStorage("isSettingCounter")) {
@@ -56,3 +59,47 @@ nav_calculator.addEventListener("click",async () => {
     
     isSwitch = !isSwitch
 })
+
+history_collapse.addEventListener("click", () => {
+    if (isCollapse) {
+        history_bar.style.display = "none"
+        history_collapse.style.right = '-50dvw'
+        history_collapse.style.transform = `rotate(0deg)`
+        history_collapse.style.animation = `left_arrow .2s ease`
+
+        isCollapse = false
+    }
+    else {
+        history_bar.style.display = "flex"
+        history_collapse.style.transform = `rotate(180deg)`
+        history_collapse.style.animation = `right_arrow .2s ease`
+        history_collapse.style.right = '0'
+
+        isCollapse = true
+    }
+})
+
+resizeCollapse()
+window.addEventListener("resize", () => {
+    resizeCollapse()
+})
+function resizeCollapse() {
+    // history_bar
+    if (innerWidth < 600) {
+        history_collapse.style.right = `-50dvw`
+        history_collapse.style.display = "block"
+        history_collapse.style.transform = `rotate(0deg)`
+        history_collapse.style.animation = `left_arrow .2s ease`
+
+        history_bar.style.display = "none"
+
+        isCollapse = false
+    }
+    else {
+        history_collapse.style.top = `0`
+        history_collapse.style.display = "none"
+
+        history_bar.style.display = "flex"
+    }
+    //
+}
