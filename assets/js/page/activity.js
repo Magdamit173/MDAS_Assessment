@@ -11,66 +11,19 @@ const history_collapse = document.querySelector("[data-history_collapse]").child
 const history_bar = document.querySelector("[data-history_bar]")
 
 let isSettings = false
-let isTutorials = false
-let isSwitch = 0
-let isCollapse = false
 let isTable = false
+let isSwitch = false
+let isPreviousClicked = true
+let invertSwitch = true
 
-nav_settings.addEventListener("click",async () => {
-    if (!await getLocalStorage("isSettingCounter")) {
-        customAlert(`click "Settings" again to exit Settings`,async (cancel, confirm) => {
-            confirm(async () => {
-                await setLocalStorage("isSettingCounter", true)
-            })
-        })
-    }
+let isTutorials = false
+let isCollapse = false
 
-    if (isSettings) settings_wrapper.style.display = "none"
-    else settings_wrapper.style.display = "block"
-    
-    isSettings = !isSettings
-    
-    // table
-    equation_table_wrapper.style.display = "none"
-    isTable = false
-})
-
-// TODO change this eventlistener on the future
 nav_tutorials.addEventListener("click", () => {
     location.href = "./tutorials"
-    // if (isTutorials) return
-    // customAlert("Not Available for A meantime", () => {
-
-    // })
-    // isTutorials = true
 })
 
-nav_calculator.addEventListener("click",async () => {
-    if (!(await getLocalStorage("calculator"))) {
-        customAlert("Still Buggy Hope You Like It",async (cancel, confirm) => {
-            confirm(async () => {
-                await setLocalStorage("calculator", 1)
-            })
-        })
-    }
 
-    if (isSwitch) {
-        solving_bar.style.display = "flex"
-        calculator_bar.style.display  = "none"
-    }
-    else if(!isSwitch) {
-        solving_bar.style.display = "none"
-        calculator_bar.style.display = "flex"
-    }
-    
-    isSwitch = !isSwitch
-
-    // table
-    equation_table_wrapper.style.display = "none"
-    isTable = false
-})
-
-// TODO: we're gonna have a global click priority in which one click would shut other nav_bar's, has table trigger at `nav_settings` and `nav_calculator`
 nav_table.addEventListener("click",async () => {
     if (!(await getLocalStorage("table"))) {
         customAlert("These Tables Are Based On `Random Number Selector` Located At Settings",async (cancel, sure) => {
@@ -83,15 +36,149 @@ nav_table.addEventListener("click",async () => {
 
     if (isTable) {
         equation_table_wrapper.style.display = "none"
-
         isTable = false
     }
     else {
         equation_table_wrapper.style.display = "flex"
-
         isTable = true
     }
+
+    // settings
+    settings_wrapper.style.display = "none"
+    isSettings = false
+
+    // switch
+    if (isTable && invertSwitch) {
+        nav_calculator.textContent = "Home"
+    }
+    else if (!isTable && invertSwitch) {
+        nav_calculator.textContent = "Calculator"
+    }
+    else if (isTable && !invertSwitch) {
+        nav_calculator.textContent = "Calculator"
+    }
+    else if (!isTable && !invertSwitch) {
+        nav_calculator.textContent = "Home"
+    }
+
+    isPreviousClicked = false
+    history.pushState({ default: '0' }, "Default View", "/")
 })
+
+nav_calculator.addEventListener("click",async () => {
+    if (!(await getLocalStorage("calculator"))) {
+        customAlert("Still Buggy Hope You Like It",async (cancel, confirm) => {
+            confirm(async () => {
+                await setLocalStorage("calculator", 1)
+            })
+        })
+    }
+
+    if (isSwitch && isPreviousClicked) {
+        solving_bar.style.display = "flex"
+        calculator_bar.style.display  = "none"
+        // nav_calculator.textContent = "Calculator"
+        isSwitch = false
+    }
+    else if(!isSwitch && isPreviousClicked) {
+        solving_bar.style.display = "none"
+        calculator_bar.style.display = "flex"
+        // nav_calculator.textContent = "Home"
+        isSwitch = true
+    }
+    
+    isPreviousClicked = true
+
+    // settings
+    settings_wrapper.style.display = "none"
+    isSettings = false
+
+    // table
+    equation_table_wrapper.style.display = "none"
+    isTable = false
+
+    
+    // switch
+    if (isSwitch) {
+        nav_calculator.textContent = "Home"
+        invertSwitch = false
+    }
+    else {
+        nav_calculator.textContent = "Calculator"
+        invertSwitch = true
+    }
+    history.pushState({ default: '0' }, "Default View", "/")
+})
+
+
+nav_settings.addEventListener("click",async () => {
+    if (!await getLocalStorage("isSettingCounter")) {
+        customAlert(`click "Settings" again to exit Settings`,async (cancel, confirm) => {
+            confirm(async () => {
+                await setLocalStorage("isSettingCounter", true)
+            })
+        })
+    }
+
+    if (isSettings) {
+        settings_wrapper.style.display = "none"
+        isSettings = false
+    }
+    else {
+        settings_wrapper.style.display = "block"
+        isSettings = true
+    }
+    
+
+    // table
+    equation_table_wrapper.style.display = "none"
+    isTable = false
+
+    // switch
+    if (isSettings && invertSwitch) {
+        nav_calculator.textContent = "Home"
+    }
+    else if (!isSettings && invertSwitch) {
+        nav_calculator.textContent = "Calculator"
+    }
+    else if (isSettings && !invertSwitch) {
+        nav_calculator.textContent = "Calculator"
+    }
+    else if (!isSettings && !invertSwitch) {
+        nav_calculator.textContent = "Home"
+    }
+    isPreviousClicked = false
+    history.pushState({ default: '0' }, "Default View", "/")
+})
+
+// popstate:
+
+// window.addEventListener('popstate', function(event) {
+//     console.log("yeah?")
+// })
+
+window.addEventListener('popstate', function(event) {
+    // Handle the state change here
+    const state = event.state
+
+    if (state && state.default === '0') {
+        // Reset everything to default state
+        isPreviousClicked = true
+
+        settings_wrapper.style.display = "none"
+        isSettings = false
+        equation_table_wrapper.style.display = "none"
+        isTable = false
+        solving_bar.style.display = "flex"
+        calculator_bar.style.display = "none"
+        isSwitch = true
+        nav_calculator.textContent = "Calculator"
+        invertSwitch = true
+    }
+})
+
+
+// history column
 
 history_collapse.addEventListener("click", () => {
     if (isCollapse) {

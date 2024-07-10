@@ -1,11 +1,10 @@
 # MDAS_Assessment
 
-- version 0.0.8.9.7
+- version 0.0.8.9.8
 
 ### Update
 
-- some layout adjustments
-- added MDAS tables (experimental)
+- some update on button logic
 
 ### Experiment Feature
 - `autosolve()` function
