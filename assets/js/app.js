@@ -14,7 +14,9 @@ let e_terms = 2
 
 let e_answer = null
 let e_text_answer = null
-let e_assess_operation = () => console.log("%c No Operation Yet", "color: white; background-color: purple; padding: .3rem; border-radius: 5px") // null
+let e_assess_operation = () => {
+    console.log("%c No Operation Yet", "color: white; background-color: purple; padding: .3rem; border-radius: 5px") // null
+}
 
 let e_mintarget_number = 1
 let e_maxtarget_number = 9

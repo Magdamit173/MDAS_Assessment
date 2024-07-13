@@ -4,6 +4,7 @@ const reset_preference = document.querySelector("#reset_preference")
 const minnumber_input = document.querySelector("#minnumber_input")
 const maxnumber_input = document.querySelector("#maxnumber_input")
 const terms_input = document.querySelector("#terms_input")
+const repeat_itself = document.querySelector("#repeat_itself")
 
 const has_target_number = document.querySelector("#target_number")
 const mintarget_input = document.querySelector("#mintarget_input")
@@ -85,6 +86,16 @@ terms_input.addEventListener("keyup",async (e) => {
         await setLocalStorage("e_terms", e_terms)
     }
     
+    await regenerateOperation()
+})
+
+repeat_itself.addEventListener("change",async () => {
+    if (repeat_itself.checked) {
+        await setLocalStorage("repeat_itself", 1)
+    }
+    else {
+        await setLocalStorage("repeat_itself", 0)
+    }
     await regenerateOperation()
 })
 

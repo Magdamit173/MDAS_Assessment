@@ -24,7 +24,7 @@
     <meta property="og:image:height" content="512"> -->
 
 
-    <script src="./assets/js/main.js" defer></script>
+    <script src="./assets/js/init.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.js" defer></script>
 </head>
 <body>
@@ -82,6 +82,29 @@
                     <li>
                         Number Of Terms: Amount of Number/s To Be Present
                     </li>
+                    <li>
+                        Repeat Itself: Make a "Random Number" Place/Set on Every Terms (Implemented Only with Multiplication, Addition, and Subtraction)
+                    </li>
+                </ul>
+                <h3>
+                    Note: Power Option
+                </h3>
+                <ul>
+                    <li>
+                        Base was based on `Minimum and Maximun Number`
+                    </li>
+                    <li>
+                        Exponent was based on `Number of Terms`
+                    </li>
+                </ul>
+                
+                <h3>
+                    Note: MDAS Option
+                </h3>
+                <ul>
+                    <li>
+                        Each Operator Amount was totally random based on `Number of Terms` (eg. x, /, +, -)
+                    </li>
                 </ul>
             </details>
             <div class="option_preference_wrapper">
@@ -102,6 +125,12 @@
                         Number of Terms
                     </label>
                     <input data-terms_input="" id="terms_input"/>
+                </div>
+                <div class="option_checkbox_wrapper">
+                    <label for="repeat_itself">
+                        Repeat Itself
+                    </label>
+                    <input data-repeat_itself="" id="repeat_itself" type="checkbox"/>
                 </div>
             </div>
         </fieldset>
@@ -286,6 +315,8 @@
                 </div>
             </div>
         </fieldset>
+
+        
     </div>
     <div class="main_wrapper">
         <div class="display_score" data-display_score="">
@@ -300,10 +331,12 @@
                     <option value="addition">addition</option>
                     <option value="subtraction">subtraction</option>
                     <option value="multiplication">multiplication</option>
-                    <option value="division">division (bug)</option>
+                    <option value="division">division (division Issue)</option>
+                    <option value="MDAS">MDAS (difficulty: Insane)</option>
                     <option value="percentage">percentage</option>
-                    <option value="prime">prime (experimental)</option>
-                    <option value="words">words (experimental)</option>
+                    <option value="power">exponent/power</option>
+                    <option value="prime">prime (true or false)</option>
+                    <option value="words">words</option>
                 </select>
                 <input class="display_input" data-display_input="" value="" placeholder="Here..."/>
             </div>

@@ -18,7 +18,9 @@ window.onload = function () {
     OnLoadRequireJS("./assets/js/operation/subtraction.js")
     OnLoadRequireJS("./assets/js/operation/multiplication.js")
     OnLoadRequireJS("./assets/js/operation/division.js")
+    OnLoadRequireJS("./assets/js/operation/mdas.js")
     OnLoadRequireJS("./assets/js/operation/percentage.js")
+    OnLoadRequireJS("./assets/js/operation/power.js")
     OnLoadRequireJS("./assets/js/operation/prime.js")
     OnLoadRequireJS("./assets/js/operation/words.js")
 

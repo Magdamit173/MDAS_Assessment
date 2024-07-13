@@ -16,8 +16,14 @@ function EvaluateOperation(operation) {
         case "division":
             configDivision()
         break
+        case "MDAS":
+            configMDAS()
+        break
         case "percentage":
             configPercentage()
+        break
+        case "power":
+            configPower()
         break
         case "prime":
             configPrime()

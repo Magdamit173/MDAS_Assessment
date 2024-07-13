@@ -30,8 +30,7 @@
     // word_list = (await retrieveContent("./assets/lexicon/words.txt")).trim().split("\n")
 
     has_target_number.checked = parseInt(await getLocalStorage("has_target_number")) || has_target_number.checked
-
-
+    repeat_itself.checked = parseInt(await getLocalStorage("repeat_itself")) || repeat_itself.checked
 
     e_answer_queue_volume = parseFloat(await getLocalStorage("e_answer_queue_volume")) || e_answer_queue_volume
     e_countdown_queue_volume = parseFloat(await getLocalStorage("e_countdown_queue_volume")) || e_countdown_queue_volume
@@ -48,3 +47,14 @@
     correct_audio_source.muted = isNaN(is_countdown_queue_muted) ? 0 : !is_answer_queue_muted
     has_countdown_queue.muted = isNaN(is_countdown_queue_muted) ? 0: !is_countdown_queue_muted
 })()
+
+window.addEventListener("offline", () => {
+    customAlert("Seems Offline, \nRefresh(cancel) or Proceed(confirm)",(cancel, okay) => {
+        cancel(() => {
+            location.reload()
+        })
+        okay(() => {
+
+        })
+    })
+})

@@ -62,7 +62,7 @@ nav_table.addEventListener("click",async () => {
     }
 
     isPreviousClicked = false
-    history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
+    // history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
 })
 
 nav_calculator.addEventListener("click",async () => {
@@ -107,7 +107,7 @@ nav_calculator.addEventListener("click",async () => {
         nav_calculator.textContent = "Calculator"
         invertSwitch = true
     }
-    history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
+    // history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
 })
 
 
@@ -148,14 +148,9 @@ nav_settings.addEventListener("click",async () => {
         nav_calculator.textContent = "Home"
     }
     isPreviousClicked = false
-    history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
+    // history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
 })
 
-// popstate:
-
-// window.addEventListener('popstate', function(event) {
-//     console.log("yeah?")
-// })
 
 window.addEventListener('popstate', function(event) {
     // Handle the state change here

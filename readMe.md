@@ -1,10 +1,15 @@
 # MDAS_Assessment
 
-- version 0.0.8.9.8.1 --fixed
+- version 0.0.8.9.9
 
 ### Update
 
-- some update on button logic
+- pushState removed
+- added "Repeat Itself" Implemented only with Multipication, Addition, Subtraction
+- updated prime.js
+- renamed assets/js/main.js as assets/js/init.js
+- added Power Option
+- added MDAS Option
 
 ### Experiment Feature
 - `autosolve()` function
