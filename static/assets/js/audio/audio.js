@@ -1,9 +1,9 @@
 const correct_audio_source = new Audio()
-correct_audio_source.src = `./assets/audio/queue/bell.wav`
+correct_audio_source.src = `./static/assets/audio/queue/bell.wav`
 correct_audio_source.volume = .6
 
 const countdown_audio_source = new Audio()
-countdown_audio_source.src = `./assets/audio/queue/encryptFSTF.wav`
+countdown_audio_source.src = `./static/assets/audio/queue/encryptFSTF.wav`
 
 const has_answer_queue = document.querySelector("#has_answer_queue")
 const answer_queue_volume = document.querySelector("#answer_queue_volume")

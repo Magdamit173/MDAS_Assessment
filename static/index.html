@@ -1,8 +1,10 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MDAS Assessment</title>
+
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/animation.css">
 
@@ -13,7 +15,8 @@
     <link rel="stylesheet" href="./assets/css/table/table.css">
 
     <link rel="icon" href="./assets/favicon/icon.png">
-    
+
+
     <meta property="og:title" content="MDAS Assessment">
     <meta property="og:description" content="Assess Your Mental Calculation Skills">
     <meta property="og:type" content="website">
@@ -21,18 +24,18 @@
     <!-- <meta property="og:image:width" content="1920">
     <meta property="og:image:height" content="1080"> -->
     <!-- <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512"> -->
-
+    <meta property="og:image:height" content="512"> --> 
 
     <script src="./assets/js/init.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.js" defer></script>
 </head>
+
 <body>
     <div class="nav_bar">
-        <div class="nav_table" data-nav_table=""> 
+        <div class="nav_table" data-nav_table="">
             Table
         </div>
-        <div class="nav_calculator" data-nav_calculator=""> 
+        <div class="nav_calculator" data-nav_calculator="">
             Calculator
         </div>
         <div class="nav_tutorials" data-nav_tutorials="">
@@ -45,9 +48,9 @@
     <div class="equation_table_wrapper" data-equation_table_wrapper="">
 
 
-        
+
     </div>
-    <div class="settings_wrapper" data-settings_wrapper="" >
+    <div class="settings_wrapper" data-settings_wrapper="">
         <fieldset class="option_fieldset">
             <Legend>
                 Miscellaneous
@@ -83,7 +86,8 @@
                         Number Of Terms: Amount of Number/s To Be Present
                     </li>
                     <li>
-                        Repeat Itself: Make a "Random Number" Place/Set on Every Terms (Implemented Only with Multiplication, Addition, and Subtraction)
+                        Repeat Itself: Make a "Random Number" Place/Set on Every Terms (Implemented Only with
+                        Multiplication, Addition, and Subtraction)
                     </li>
                 </ul>
                 <h3>
@@ -97,7 +101,7 @@
                         Exponent was based on `Number of Terms`
                     </li>
                 </ul>
-                
+
                 <h3>
                     Note: MDAS Option
                 </h3>
@@ -112,25 +116,25 @@
                     <label for="minnumber_input">
                         Minimum Number
                     </label>
-                    <input data-minnumber_input="" id="minnumber_input"/>
+                    <input data-minnumber_input="" id="minnumber_input" />
                 </div>
                 <div class="option_sub_wrapper">
                     <label for="maxnumber_input">
                         Maximum Number
                     </label>
-                    <input data-maxnumber_input="" id="maxnumber_input"/>
+                    <input data-maxnumber_input="" id="maxnumber_input" />
                 </div>
                 <div class="option_sub_wrapper">
                     <label for="terms_input">
                         Number of Terms
                     </label>
-                    <input data-terms_input="" id="terms_input"/>
+                    <input data-terms_input="" id="terms_input" />
                 </div>
                 <div class="option_checkbox_wrapper">
                     <label for="repeat_itself">
                         Repeat Itself
                     </label>
-                    <input data-repeat_itself="" id="repeat_itself" type="checkbox"/>
+                    <input data-repeat_itself="" id="repeat_itself" type="checkbox" />
                 </div>
             </div>
         </fieldset>
@@ -160,11 +164,11 @@
                     <label for="number_steps">
                         Steps
                     </label>
-                    <input data-number_steps="" id="number_steps"/>
+                    <input data-number_steps="" id="number_steps" />
                 </div>
                 <div class="option_sub_wrapper">
                     <label for="number_type">
-                        Set To: 
+                        Set To:
                     </label>
                     <select id="number_type">
                         <option value="Integer" selected>Integer</option>
@@ -189,7 +193,8 @@
                     description: Usually Implemented to MDAS (multiplication, division, addition, and subtraction)
                 </p>
                 <p>
-                    Only And Usually The Last Term/Number Was Replaced By This. With Little Difference For Multiplication Which Is Reverse (The Front Was Replaced)
+                    Only And Usually The Last Term/Number Was Replaced By This. With Little Difference For
+                    Multiplication Which Is Reverse (The Front Was Replaced)
                 </p>
                 <ul>
                     <li>
@@ -208,19 +213,19 @@
                     <label for="target_number">
                         Target Number
                     </label>
-                    <input data-target_number="" id="target_number" type="checkbox"/>
+                    <input data-target_number="" id="target_number" type="checkbox" />
                 </div>
                 <div class="option_sub_wrapper">
                     <label for="mintarget_input">
                         Minimum Target Number
                     </label>
-                    <input data-mintarget_input="" id="mintarget_input"/>
+                    <input data-mintarget_input="" id="mintarget_input" />
                 </div>
                 <div class="option_sub_wrapper">
                     <label for="maxtarget_input">
                         Maximum Target Number
                     </label>
-                    <input data-maxtarget_input="" id="maxtarget_input"/>
+                    <input data-maxtarget_input="" id="maxtarget_input" />
                 </div>
             </div>
         </fieldset>
@@ -241,7 +246,8 @@
                         Has Timer: Activate `Countdown`
                     </li>
                     <li>
-                        Countdown Number (By Seconds Min: 10 secs): Usually Can Be Set To Any Seconds, But After The Countdown Is Finish It Would Prompt Your Solving Rate Per Minute
+                        Countdown Number (By Seconds Min: 10 secs): Usually Can Be Set To Any Seconds, But After The
+                        Countdown Is Finish It Would Prompt Your Solving Rate Per Minute
                     </li>
                 </ul>
             </details>
@@ -250,18 +256,18 @@
                     <label for="has_countdown">
                         Has Timer
                     </label>
-                    <input data-has_countdown="" id="has_countdown" type="checkbox"/>
+                    <input data-has_countdown="" id="has_countdown" type="checkbox" />
                 </div>
                 <div class="option_sub_wrapper">
                     <label for="countdown_number">
                         Countdown Number (By Seconds)
                     </label>
-                    <input data-countdown_number="" id="countdown_number"/>
+                    <input data-countdown_number="" id="countdown_number" />
                 </div>
             </div>
         </fieldset>
         <hr>
-        
+
         <fieldset class="option_fieldset">
             <legend>
                 Audio Settings
@@ -293,30 +299,32 @@
                     <label for="has_answer_queue">
                         Answer Queue
                     </label>
-                    <input data-="has_answer_queue" id="has_answer_queue" type="checkbox" checked/>
+                    <input data-="has_answer_queue" id="has_answer_queue" type="checkbox" checked />
                 </div>
                 <div class="option_sub_wrapper">
                     <label for="answer_queue_volume">
                         Answer Queue Volume
                     </label>
-                    <input type="range" data-answer_queue_volume="" id="answer_queue_volume" placeholder="between 0 and 1" style="padding: 0;"/>
+                    <input type="range" data-answer_queue_volume="" id="answer_queue_volume"
+                        placeholder="between 0 and 1" style="padding: 0;" />
                 </div>
                 <div class="option_checkbox_wrapper">
                     <label for="has_countdown_queue">
                         Countdown Queue
                     </label>
-                    <input data-="has_countdown_queue" id="has_countdown_queue" type="checkbox" checked/>
+                    <input data-="has_countdown_queue" id="has_countdown_queue" type="checkbox" checked />
                 </div>
                 <div class="option_sub_wrapper">
                     <label for="countdown_queue_volume">
                         Countdown Queue Volume
                     </label>
-                    <input type="range" data-countdown_queue_volume="" id="countdown_queue_volume" placeholder="between 0 and 1" style="padding: 0;"/>
+                    <input type="range" data-countdown_queue_volume="" id="countdown_queue_volume"
+                        placeholder="between 0 and 1" style="padding: 0;" />
                 </div>
             </div>
         </fieldset>
 
-        
+
     </div>
     <div class="main_wrapper">
         <div class="display_score" data-display_score="">
@@ -324,10 +332,10 @@
         </div>
         <div class="multiswitch_bar" data-multiswitch_bar="">
             <!-- <input class="display_term" data-display_term /> -->
-            <div class="solving_bar" data-solving_bar="" >
+            <div class="solving_bar" data-solving_bar="">
                 <select class="display_term" name="display_term" data-display_term id="display_term">
                     <option data-option_display="" value="option_display">&lt; option &gt;</option>
-                    
+
                     <option value="addition">addition</option>
                     <option value="subtraction">subtraction</option>
                     <option value="multiplication">multiplication</option>
@@ -338,12 +346,12 @@
                     <option value="prime">prime (true or false)</option>
                     <option value="words">words</option>
                 </select>
-                <input class="display_input" data-display_input="" value="" placeholder="Here..."/>
+                <input class="display_input" data-display_input="" value="" placeholder="Here..." />
             </div>
             <div class="calculator_bar" data-calculator_bar style="display: none;">
                 <div class="lcd">
                     <div class="lcd_big" data-lcd_big="">
-                        
+
                     </div>
                     <div class="lcd_small" data-lcd_small="">
 
@@ -353,7 +361,7 @@
                     <div data-reset_event="">AC</div>
                     <div data-backspace_event="">&#8592;</div>
                     <div data-switchinteger_event="">
-                        <!-- +/- --> 
+                        <!-- +/- -->
                     </div>
                     <div data-sign_event="">÷</div>
                     <div data-number_event="">7</div>
@@ -380,7 +388,7 @@
         <div class="history_collapse" data-history_collapse>
             <img src="./assets/favicon/less_than.png" alt="&lt;">
         </div>
-        <div class="history_bar" data-history_bar="" >
+        <div class="history_bar" data-history_bar="">
             <div class="history_bar_label">
                 Recent History
             </div>
@@ -392,4 +400,5 @@
         </div>
     </div>
 </body>
+
 </html>

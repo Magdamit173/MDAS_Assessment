@@ -20,7 +20,7 @@ let isTutorials = false
 let isCollapse = false
 
 nav_tutorials.addEventListener("click", () => {
-    location.href = "./tutorials"
+    location.href = "./static/tutorials/index.html"
 })
 
 
