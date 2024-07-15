@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from uuid import uuid4
 
 load_dotenv()
-# from waitress import serve # type: ignore
+from waitress import serve # type: ignore
 mongoapp = MongoClient(os.environ.get("clienturl"))
 database = mongoapp["mdas_assessment"]
 collection = database["records"]
@@ -103,5 +103,5 @@ def get_records():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == "__main__":
-    # serve(app, host='0.0.0.0', port=5000)
-    app.run(debug=True)
+    serve(app, host='0.0.0.0', port=5000)
+    # app.run(debug=True)
