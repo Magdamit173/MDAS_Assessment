@@ -7,11 +7,12 @@
 
     <link rel="stylesheet" href="./static/assets/css/index.css">
     <link rel="stylesheet" href="./static/assets/css/animation.css">
-    <link rel="stylesheet" href="./static/assets/css/tab/customAlert.css'">
+    <link rel="stylesheet" href="./static/assets/css/tab/customAlert.css">
     <link rel="stylesheet" href="./static/assets/css/page/settings.css">
     <link rel="stylesheet" href="./static/assets/css/page/activity.css">
     <link rel="stylesheet" href="./static/assets/css/page/calculator.css">
     <link rel="stylesheet" href="./static/assets/css/table/table.css">
+    <link rel="stylesheet" href="./static/assets/css/online/online.css">
     <link rel="icon" href="./static/assets/favicon/icon.png">
 
 
@@ -30,6 +31,9 @@
 
 <body>
     <div class="nav_bar">
+        <div class="nav_rank" data-nav_rank="">
+            Online&nbsp;Rank
+        </div>
         <div class="nav_table" data-nav_table="">
             Table
         </div>
@@ -43,17 +47,33 @@
             Settings
         </div>
     </div>
+
+    <div class="rank_wrapper" data-rank_wrapper="">
+        {% for record in records %}
+            <div>
+                <h3>{{ record['username'] }}'s rate/mins</h3>
+                <ul>
+                    {% for key, value in record.items() %}
+                        {% if key != "_id" and key != "username" and key != "password"%}
+                            <li>{{ key }}: {{ value|float * 60}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
     <div class="equation_table_wrapper" data-equation_table_wrapper="">
 
-
-
     </div>
+
     <div class="settings_wrapper" data-settings_wrapper="">
         <fieldset class="option_fieldset">
             <Legend>
                 Miscellaneous
             </Legend>
             <div class="option_preference_wrapper">
+                <input type="text" class="option_sub_wrapper default_button" placeholder="username" data-username_input="">
+                <input type="text" class="option_sub_wrapper default_button" placeholder="password" data-password_input="">
                 <div class="option_sub_wrapper default_button" data-survey="" id="survey">
                     Suggestion/Survey?
                 </div>
@@ -384,7 +404,7 @@
 
         </div>
         <div class="history_collapse" data-history_collapse>
-            <img src="./assets/favicon/less_than.png" alt="&lt;">
+            <img src="./static/assets/favicon/less_than.png" alt="&lt;">
         </div>
         <div class="history_bar" data-history_bar="">
             <div class="history_bar_label">

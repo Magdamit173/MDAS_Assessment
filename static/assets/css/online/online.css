@@ -1,0 +1,31 @@
+.rank_wrapper {
+    position: absolute;
+    top: 45px;
+    flex-wrap: wrap;
+    z-index: 2;
+    
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(0.7rem, 5dvw, 5dvw) clamp(0.7rem, 5dvw, 5dvw);
+
+    background-color: white;
+    width: 100dvw;
+    height: calc(100dvh - 45px);
+
+    overflow-y: scroll;
+    gap: 2rem;
+}
+
+.rank_wrapper div {
+    border: solid 1px indianred;
+    padding: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.rank_wrapper div ul {
+    margin-left: 1em;
+    padding: 1em;
+}
+

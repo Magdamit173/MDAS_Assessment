@@ -2,6 +2,9 @@ const nav_tutorials = document.querySelector("[data-nav_tutorials]")
 const nav_settings = document.querySelector("[data-nav_settings]")
 const nav_calculator = document.querySelector("[data-nav_calculator]")
 const nav_table = document.querySelector("[data-nav_table]")
+const nav_rank = document.querySelector("[data-nav_rank]")
+
+const rank_wrapper = document.querySelector("[data-rank_wrapper]")
 const settings_wrapper = document.querySelector("[data-settings_wrapper]")
 
 const solving_bar = document.querySelector("[data-solving_bar]")
@@ -10,6 +13,8 @@ const calculator_bar = document.querySelector("[data-calculator_bar]")
 const history_collapse = document.querySelector("[data-history_collapse]").children[0]
 const history_bar = document.querySelector("[data-history_bar]")
 
+
+let isRank = false
 let isSettings = false
 let isTable = false
 let isSwitch = false
@@ -19,10 +24,52 @@ let invertSwitch = true
 let isTutorials = false
 let isCollapse = false
 
+
+nav_rank.addEventListener("click",async () => {
+    if (!(await getLocalStorage("rank"))) {
+        customAlert("Turn on 'Has Timer' in settings and set your username and password settings to participate in online ranking.",async (cancel, confirm) => {
+            confirm(async () => {
+                await setLocalStorage("rank", 1)
+            })
+        })
+    }
+
+    if (isRank) {
+        rank_wrapper.style.display = "none"
+        isRank = false
+    }
+    else {
+        rank_wrapper.style.display = "flex"
+        isRank = true
+    }
+
+    // settings
+    settings_wrapper.style.display = "none"
+    isSettings = false
+
+    // switch
+    if (isTable && invertSwitch) {
+        nav_calculator.textContent = "Home"
+    }
+    else if (!isTable && invertSwitch) {
+        nav_calculator.textContent = "Calculator"
+    }
+    else if (isTable && !invertSwitch) {
+        nav_calculator.textContent = "Calculator"
+    }
+    else if (!isTable && !invertSwitch) {
+        nav_calculator.textContent = "Home"
+    }
+    isPreviousClicked = false
+    
+    // table
+    equation_table_wrapper.style.display = "none"
+    isTable = false
+})
+
 nav_tutorials.addEventListener("click", () => {
     location.href = "./static/tutorials/index.html"
 })
-
 
 nav_table.addEventListener("click",async () => {
     if (!(await getLocalStorage("table"))) {
@@ -62,6 +109,10 @@ nav_table.addEventListener("click",async () => {
     }
 
     isPreviousClicked = false
+
+    // rank
+    rank_wrapper.style.display = "none"
+    isRank = false
     // history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
 })
 
@@ -107,6 +158,9 @@ nav_calculator.addEventListener("click",async () => {
         nav_calculator.textContent = "Calculator"
         invertSwitch = true
     }
+    // rank
+    rank_wrapper.style.display = "none"
+    isRank = false
     // history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
 })
 
@@ -148,6 +202,9 @@ nav_settings.addEventListener("click",async () => {
         nav_calculator.textContent = "Home"
     }
     isPreviousClicked = false
+    // rank
+    rank_wrapper.style.display = "none"
+    isRank = false
     // history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
 })
 

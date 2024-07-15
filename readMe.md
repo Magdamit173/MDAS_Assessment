@@ -1,10 +1,12 @@
 # MDAS_Assessment
 
-- version 0.0.9: mdas_online
+- version 0.0.9.1: mdas_online
 
 ### Update
 
-- implementing mdas_online (not done, im sleepy)
+- implemented mdas_online
+- still unfinish but works 
+- no session protection/ no maximum username protection
 
 ### Experiment Feature
 - `autosolve()` function
