@@ -55,8 +55,6 @@
     // located at countdown.js username, password
     username_input.value = await getLocalStorage("username_input")
     password_input.value = await getLocalStorage("password_input")
-
-    console.log(await getLocalStorage("username_input"))
 })()
 
 window.addEventListener("offline", () => {

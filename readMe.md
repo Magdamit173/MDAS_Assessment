@@ -1,18 +1,16 @@
 # MDAS_Assessment
 
-- version 0.0.9.1: mdas_online
+- version 0.0.9.2: mdas_online
 
 ### Update
 
-- implemented mdas_online
-- still unfinish but works 
-- no session protection/ no maximum username protection
+- updated some input
+- limit request
 
 ### Experiment Feature
 - `autosolve()` function
     -  solves only if `has timer` is checked
 
-### next major update
-<p> to be implemented? </p>
-- https://api.mathjs.org/
+### To be implemented? 
 - SymPy Gamma
+- add flask router on mdas_online

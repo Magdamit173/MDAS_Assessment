@@ -62,11 +62,10 @@ async function CountDown(seconds) {
         customAlert(`Current Score: ${(e_score/seconds ) * 60} per minute, High Score: ${new_high_score}`)
 
         const data = {
-            "username": username_input.value || "anonymous",
-            "password": password_input.value || "default",
+            "username": username_input.value.slice(0, 64) || `anonymous-${new Date().getTime()}`,
+            "password": password_input.value.slice(0, 64) || `default`,
             [`countdown_${s_operation}`]: (e_score / seconds).toString()
         }
-        
         try {
             const response = await fetch("/api/data", {
                 method: 'POST',
