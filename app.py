@@ -13,7 +13,7 @@ collection = database["records"]
 
 app = Flask(__name__)
 # app.static_folder = 'templates/'
-app.debug = True
+# app.debug = True
 
 @app.route("/")
 def index():
@@ -103,5 +103,5 @@ def get_records():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == "__main__":
-    serve(app, host='0.0.0.0', port=5000)
-    # app.run(debug=True)
+    serve(app, host='0.0.0.0', port=5000, threads=8)
+    # app.run(debug=True) 
