@@ -28,25 +28,25 @@ limiter = Limiter(
 
 @app.errorhandler(RateLimitExceeded)
 def handle_rate_limit_exceeded(e):
-    ip = request.remote_addr
+    ip = request.headers.get('X-Forwarded-For', '').split(',')[0] if 'X-Forwarded-For' in request.headers else request.remote_addr
     print(f"Rate limit exceeded for IP: {ip}")
     block_ip(ip)
     return f"IP {ip} blacklisted due to forbidden request", 429
 
 @app.route('/rate_limit_exceeded')
 def rate_limit_exceeded():
-    ip = request.remote_addr
+    ip = request.headers.get('X-Forwarded-For', '').split(',')[0] if 'X-Forwarded-For' in request.headers else request.remote_addr
     return f"IP {ip} blacklisted due to forbidden request", 429
 
 @app.before_request
 def check_blacklist():
-    ip = request.remote_addr
+    ip = request.headers.get('X-Forwarded-For', '').split(',')[0] if 'X-Forwarded-For' in request.headers else request.remote_addr
     if is_ip_blacklisted(ip):
         return f"IP {ip} blacklisted due to forbidden request", 403
 
 @app.route("/")
 def index():
-    ip = request.remote_addr
+    ip = request.headers.get('X-Forwarded-For', '').split(',')[0] if 'X-Forwarded-For' in request.headers else request.remote_addr
     if is_ip_blacklisted(ip):
         return f"IP {ip} blacklisted due to forbidden request", 403
 
@@ -71,7 +71,7 @@ def static_index():
 @app.route('/api/data', methods=['POST'])
 @limiter.limit("1 per 5 seconds")
 def receive_data():
-    ip = request.remote_addr
+    ip = request.headers.get('X-Forwarded-For', '').split(',')[0] if 'X-Forwarded-For' in request.headers else request.remote_addr
     if is_ip_blacklisted(ip):
         return f"IP {ip} blacklisted due to forbidden request", 403
     
