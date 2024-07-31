@@ -61,7 +61,7 @@ def index():
     sorted_records = sorted(records, key=lambda x: x[0], reverse=True)
     sorted_records = [record for _, record in sorted_records]
 
-    return render_template("index.html", records=sorted_records[:10])
+    return render_template("index.html", records=sorted_records[:100])
 
 
 @app.route("/static/index.html")
