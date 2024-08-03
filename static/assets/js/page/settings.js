@@ -13,6 +13,8 @@ const maxtarget_input = document.querySelector("#maxtarget_input")
 const number_steps = document.querySelector("#number_steps")
 const number_type = document.querySelector("#number_type")
 
+const dark_mode = document.querySelector("#dark_mode")
+
 minnumber_input.value = e_minnumber
 maxnumber_input.value = e_maxnumber
 terms_input.value = e_terms
@@ -170,6 +172,20 @@ number_type.addEventListener("change",async (e) => {
     }
     
     await regenerateOperation()
+})
+
+dark_mode.addEventListener("click", () => {
+    darkMode()
+})
+
+function darkMode() {
+    document.documentElement.classList.toggle('dark_theme')
+}
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && (event.key === 'd' || event.key === 'D')) {
+        event.preventDefault()
+        darkMode()
+    }
 })
 
 // has_countdown and countdown_number was at "assets/js/time/countdown.js"

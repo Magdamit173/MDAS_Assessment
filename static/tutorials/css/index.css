@@ -4,18 +4,38 @@
     box-sizing: border-box;
 }
 
+
+:root {
+    --nav: rgb(234, 86, 86);
+    --primary: indianred;
+    --secondary: lavender;
+    --tertiary: aliceblue;
+    --primary-text: white;
+    --dark-text: black;
+    --secondary-text: azure;
+}
+.dark_theme {
+    --nav: #7251b5;
+    --primary: #815ac0;
+    --secondary: green;
+    --tertiary: #282828;
+    --primary-text: white;
+    --dark-text: white;
+    --secondary-text: azure;
+}
+
 ::-webkit-scrollbar {
     width: 10px; 
     height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: indianred; 
+    background: var(--primary); 
     border-radius: 5px; 
 }
 
 ::-webkit-scrollbar-track {
-    background: aliceblue;
+    background: var(--tertiary);
 }
 
 
@@ -24,7 +44,7 @@ body {
 
     flex-direction: column;
 
-    background-color: lavender;
+    background-color: var(--secondary);
 
     height: 100dvh;
     width: 100dvw;
@@ -37,7 +57,7 @@ body {
 
     height: 45px;
 
-    background-color: rgb(234, 86, 86);
+    background-color: var(--nav);
     overflow: hidden;
 }
 
@@ -45,20 +65,20 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 1.3rem calc(.7rem + 2.7vw);
 
-    color: white;
+    color: var(--primary-text);
 }
 
 .nav_bar > div:hover, .nav_bar > a:hover {
     transition: all .2s ease;
-    background-color: white;
-    color: indianred;
+    background-color: var(--primary-text);
+    color: var(--primary);
     /* text-shadow: 1px 1px black; */
     font-weight: 700;
     padding: 1.3rem calc(1rem + 2.7vw);
 }
 
 a {
-    color: white;
+    color: var(--primary-text);
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.1rem;
@@ -91,10 +111,10 @@ a {
     aspect-ratio: 1;
 
     /* margin: 1rem auto; */
-    background-color: aliceblue;
-    color: indianred;
-    border: solid 3px indianred;
-    /* text-shadow: 1px 1px 1px indianred; */
+    background-color: var(--tertiary);
+    color: var(--primary);
+    border: solid 3px var(--primary);
+    /* text-shadow: 1px 1px 1px var(--primary); */
     font-weight: 700;
     border-radius: 14px;
     
@@ -103,14 +123,14 @@ a {
 
 .tutorial_block:hover {
     scale: 1.1;
-    background-color: indianred;
-    color: aliceblue;
-    border-color: white;
+    background-color: var(--primary);
+    color: var(--tertiary);
+    border-color: var(--primary-text);
 }
 
 hr {
     outline: none;
     border: solid 0 none;
-    background-color: indianred;
+    background-color: var(--primary);
     margin: 1.5rem;
 }

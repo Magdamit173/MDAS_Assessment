@@ -141,5 +141,6 @@ def block_ip(ip):
         blacklist_collection.insert_one({"ip": ip})
 
 if __name__ == "__main__":
+    print("application running...")
     serve(app, host='0.0.0.0', port=5000, threads=8)
     # app.run(debug=True) 

@@ -9,11 +9,13 @@ let is_countdown = false
 let countdown_interval_queue = null
 
 username_input.addEventListener("input",async (e) => {
-    await setLocalStorage("username_input", e.target.value)
+    e_username_input = e.target.value
+    await setLocalStorage("e_username_input", e.target.value)
 })
 
 password_input.addEventListener("input",async (e) => {
-    await setLocalStorage("password_input", e.target.value)
+    e_password_input = e.target.value
+    await setLocalStorage("e_password_input", e.target.value)
 })
 
 countdown_number.value = e_countdown
@@ -41,13 +43,13 @@ has_countdown.addEventListener("change",async () => {
         e_score = 0
         DisplayScore(e_score)
         await InitializedScore()
-        await setLocalStorage("has_countdown", 1)
+        await setLocalStorage("e_has_countdown", 1)
     }
     else {
         e_score = 0
         DisplayScore(e_score)
         await InitializedScore()
-        await setLocalStorage("has_countdown", 0)
+        await setLocalStorage("e_has_countdown", 0)
     }
 })
 
@@ -62,8 +64,8 @@ async function CountDown(seconds) {
         customAlert(`Current Score: ${(e_score/seconds ) * 60} per minute, High Score: ${new_high_score}`)
 
         const data = {
-            "username": username_input.value.slice(0, 64) || `anonymous-${new Date().getTime()}`,
-            "password": password_input.value.slice(0, 64) || `default`,
+            "username": username_input.value.slice(0, 64) || e_username_input,
+            "password": password_input.value.slice(0, 64) || e_password_input,
             [`countdown_${s_operation}`]: (e_score / seconds).toString()
         }
         try {

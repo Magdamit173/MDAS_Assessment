@@ -15,7 +15,7 @@ let e_terms = 2
 let e_answer = null
 let e_text_answer = null
 let e_assess_operation = () => {
-    console.log("%c No Operation Yet", "color: white; background-color: purple; padding: .3rem; border-radius: 5px") // null
+    console.log("%c No Operation Yet", "color: var(--primary-text); background-color: purple; padding: .3rem; border-radius: 5px") // null
 }
 
 let e_mintarget_number = 1
@@ -24,10 +24,17 @@ let e_maxtarget_number = 9
 let e_number_steps = 0
 let e_number_type = "Integer"
 
-let e_has_answer_queue = 1
-let e_has_countdown_queue = 1
 let e_answer_queue_volume = 60
 let e_countdown_queue_volume = 100
+
+let e_has_answer_queue = true
+let e_has_countdown_queue = true
+let e_has_countdown = false
+let e_has_target_number = false
+let e_repeat_itself = false
+
+let e_username_input = `anonymous-${new Date().getTime()}`
+let e_password_input = "default"
 
 display_term.addEventListener("click",async () => {
     isSelected = !isSelected

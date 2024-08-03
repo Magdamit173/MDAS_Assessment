@@ -11,11 +11,11 @@
 
     transform: translate(-50% ,-50%);
 
-    border: solid 2px indianred;
+    border: solid 2px var(--primary);
     border-radius: 1rem;
 
     padding: 1.3rem;
-    background-color: aliceblue;
+    background-color: var(--tertiary);
     /* box-shadow: 1px 1px 1px black; */
 
     gap: 20px;
@@ -29,10 +29,11 @@
     padding: 1.3rem;
     width: 100%;
 
-    /* border: solid 1px indianred; */
+    /* border: solid 1px var(--primary); */
     border-radius: 4px;
     max-height: 300px;
-    color: indianred;
+    color: var(--primary);
+    text-shadow: 1px 1px 1px var(--primary-text);
 
     word-wrap: wrap;
     overflow-y: scroll;
@@ -51,12 +52,12 @@
 
 .alert_cancel {
     padding: .7rem .9rem;
-    background-color: indianred;
-    color: white;
+    background-color: var(--primary);
+    color: var(--primary-text);
     text-shadow: 1px 1px 1px black;
     outline: none;
 
-    /* border: solid 1px indianred; */
+    /* border: solid 1px var(--primary); */
     border: solid 0px;
     border-radius: 4px;
     font-size: 1.3rem;
@@ -65,11 +66,11 @@
 .alert_confirm {
     padding: .7rem .9rem;
     background-color: rgb(39, 184, 39);
-    color: white;
+    color: var(--primary-text);
     text-shadow: 1px 1px 1px black;
     outline: none;
 
-    /* border: solid 1px indianred; */
+    /* border: solid 1px var(--primary); */
     border: solid 0px;
     border-radius: 4px;
     font-size: 1.3rem;

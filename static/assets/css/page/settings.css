@@ -1,7 +1,7 @@
 hr {
     outline: none;
     border: solid 0 none;
-    background-color: indianred;
+    background-color: var(--primary);
     /* margin: 1.5rem; */
 }
 
@@ -19,7 +19,7 @@ hr {
     width: 100dvw;
 
     border: solid 1px white;
-    background-color: lavender;
+    background-color: var(--secondary);
 }
 
 .option_preference_wrapper {
@@ -57,22 +57,22 @@ hr {
 .option_details > h3,
 .option_details > h4,
 .option_details > p {
-    background-color: aliceblue;
+    background-color: var(--tertiary);
     margin: 1rem;
     border-radius: 5px;
     padding: 1rem;
-    color: indianred;
+    color: var(--primary);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
 }
 
 .option_details > ul {
     
-    background-color: aliceblue;
+    background-color: var(--tertiary);
     margin: 1rem;
     border-radius: 5px;
     padding: 1rem;
-    color: indianred;
+    color: var(--primary);
 
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
@@ -95,7 +95,7 @@ hr {
     padding: 0.6rem;
     margin: 0.6rem;
     flex-grow: 1;
-    background-color: indianred;
+    background-color: var(--primary);
     color: white;
     text-shadow: 1px 1px 1px black;
 
@@ -117,10 +117,10 @@ hr {
     font-size: 1.1rem;
     outline: none;
     background-color: snow;
-    border: solid 2px lavender;
+    border: solid 2px var(--secondary);
     border-radius: 5px;
     width: 100%;
-    color: indianred;
+    color: var(--primary);
     font-weight: 700;
 
     height: 1.1rem;
@@ -132,7 +132,7 @@ hr {
     outline: none;
     color: black;
     background-color: snow;
-    border: solid 2px lavender;
+    border: solid 2px var(--secondary);
     border-radius: 5px;
     width: 100%;
 
@@ -154,7 +154,7 @@ hr {
     padding: 0.6rem;
     margin: 0.6rem;
     flex-grow: 1;
-    background-color: indianred;
+    background-color: var(--primary);
     color: white;
     text-shadow: 1px 1px 1px black;
     max-width: 300px;
@@ -194,13 +194,13 @@ hr {
 }
 
 #number_type {
-    color: indianred;
+    color: var(--primary);
     text-transform: capitalize;
     font-weight: 700;
 }
 
 .default_button {
-    border: double 5px indianred;
+    border: double 5px var(--primary);
     padding: 1rem;
 
     font-family: Arial, Helvetica, sans-serif;
@@ -210,8 +210,8 @@ hr {
 
     text-shadow: 1px 1px 1px transparent;
     font-weight: 700;
-    background-color: lavender;
-    color: indianred;
+    background-color: var(--secondary);
+    color: var(--primary);
     transition: all .1s ease-out;
     text-decoration: none;
 }

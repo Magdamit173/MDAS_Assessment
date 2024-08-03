@@ -3,6 +3,7 @@ const nav_settings = document.querySelector("[data-nav_settings]")
 const nav_calculator = document.querySelector("[data-nav_calculator]")
 const nav_table = document.querySelector("[data-nav_table]")
 const nav_rank = document.querySelector("[data-nav_rank]")
+const nav_home = document.querySelector("[data-nav_home]")
 
 const rank_wrapper = document.querySelector("[data-rank_wrapper]")
 const settings_wrapper = document.querySelector("[data-settings_wrapper]")
@@ -13,6 +14,8 @@ const calculator_bar = document.querySelector("[data-calculator_bar]")
 const history_collapse = document.querySelector("[data-history_collapse]").children[0]
 const history_bar = document.querySelector("[data-history_bar]")
 
+let which_nav_focus = null
+let which_wrapper_focus = null
 
 let isRank = false
 let isSettings = false
@@ -24,54 +27,27 @@ let invertSwitch = true
 let isTutorials = false
 let isCollapse = false
 
+nav_tutorials.addEventListener("click", () => {
+    location.href = "../static/tutorials/index.html"
+})
 
-nav_rank.addEventListener("click",async () => {
-    if (!(await getLocalStorage("rank"))) {
-        customAlert("Turn on 'Has Timer' in settings and set your username and password settings to participate in online ranking.",async (cancel, confirm) => {
+
+showNav(nav_home, solving_bar, "flex", async (def) => {
+    def(solving_bar)
+})
+
+showNav(nav_calculator, calculator_bar, "flex", async (def) => {
+    if (!(await getLocalStorage("calculator"))) {
+        customAlert("Still Buggy Hope You Like It",async (cancel, confirm) => {
             confirm(async () => {
-                await setLocalStorage("rank", 1)
+                await setLocalStorage("calculator", 1)
             })
         })
-    }
-
-    if (isRank) {
-        rank_wrapper.style.display = "none"
-        isRank = false
-    }
-    else {
-        rank_wrapper.style.display = "flex"
-        isRank = true
-    }
-
-    // settings
-    settings_wrapper.style.display = "none"
-    isSettings = false
-
-    // switch
-    if (isTable && invertSwitch) {
-        nav_calculator.textContent = "Home"
-    }
-    else if (!isTable && invertSwitch) {
-        nav_calculator.textContent = "Calculator"
-    }
-    else if (isTable && !invertSwitch) {
-        nav_calculator.textContent = "Calculator"
-    }
-    else if (!isTable && !invertSwitch) {
-        nav_calculator.textContent = "Home"
-    }
-    isPreviousClicked = false
-    
-    // table
-    equation_table_wrapper.style.display = "none"
-    isTable = false
+    }    
+    def(solving_bar)
 })
 
-nav_tutorials.addEventListener("click", () => {
-    location.href = "./static/tutorials/index.html"
-})
-
-nav_table.addEventListener("click",async () => {
+showNav(nav_table, equation_table_wrapper, "flex", async () => {
     if (!(await getLocalStorage("table"))) {
         customAlert("These Tables Are Based On `Random Number Selector` Located At Settings",async (cancel, sure) => {
             await setLocalStorage("table", 1)
@@ -80,134 +56,81 @@ nav_table.addEventListener("click",async () => {
             })
         })
     }
-
-    if (isTable) {
-        equation_table_wrapper.style.display = "none"
-        isTable = false
-    }
-    else {
-        equation_table_wrapper.style.display = "flex"
-        isTable = true
-    }
-
-    // settings
-    settings_wrapper.style.display = "none"
-    isSettings = false
-
-    // switch
-    if (isTable && invertSwitch) {
-        nav_calculator.textContent = "Home"
-    }
-    else if (!isTable && invertSwitch) {
-        nav_calculator.textContent = "Calculator"
-    }
-    else if (isTable && !invertSwitch) {
-        nav_calculator.textContent = "Calculator"
-    }
-    else if (!isTable && !invertSwitch) {
-        nav_calculator.textContent = "Home"
-    }
-
-    isPreviousClicked = false
-
-    // rank
-    rank_wrapper.style.display = "none"
-    isRank = false
-    // history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
 })
 
-nav_calculator.addEventListener("click",async () => {
-    if (!(await getLocalStorage("calculator"))) {
-        customAlert("Still Buggy Hope You Like It",async (cancel, confirm) => {
+showNav(nav_rank, rank_wrapper, "flex", async () => {
+    if (!(await getLocalStorage("rank"))) {
+        customAlert("Turn on 'Has Timer' in settings and set your username and password settings to participate in online ranking.",async (cancel, confirm) => {
             confirm(async () => {
-                await setLocalStorage("calculator", 1)
+                await setLocalStorage("rank", 1)
             })
         })
     }
 
-    if (isSwitch && isPreviousClicked) {
-        solving_bar.style.display = "flex"
-        calculator_bar.style.display  = "none"
-        // nav_calculator.textContent = "Calculator"
-        isSwitch = false
-    }
-    else if(!isSwitch && isPreviousClicked) {
-        solving_bar.style.display = "none"
-        calculator_bar.style.display = "flex"
-        // nav_calculator.textContent = "Home"
-        isSwitch = true
-    }
-    
-    isPreviousClicked = true
-
-    // settings
-    settings_wrapper.style.display = "none"
-    isSettings = false
-
-    // table
-    equation_table_wrapper.style.display = "none"
-    isTable = false
-
-    
-    // switch
-    if (isSwitch) {
-        nav_calculator.textContent = "Home"
-        invertSwitch = false
-    }
-    else {
-        nav_calculator.textContent = "Calculator"
-        invertSwitch = true
-    }
-    // rank
-    rank_wrapper.style.display = "none"
-    isRank = false
-    // history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
 })
 
-
-nav_settings.addEventListener("click",async () => {
+showNav(nav_settings, settings_wrapper, "block", async () => {
     if (!await getLocalStorage("isSettingCounter")) {
-        customAlert(`click "Settings" again to exit Settings`,async (cancel, confirm) => {
-            confirm(async () => {
+        customAlert(`click "Settings" again to exit Settings`,async (cancel, okay) => {
+            okay(async () => {
                 await setLocalStorage("isSettingCounter", true)
             })
         })
     }
-
-    if (isSettings) {
-        settings_wrapper.style.display = "none"
-        isSettings = false
-    }
-    else {
-        settings_wrapper.style.display = "block"
-        isSettings = true
-    }
-    
-
-    // table
-    equation_table_wrapper.style.display = "none"
-    isTable = false
-
-    // switch
-    if (isSettings && invertSwitch) {
-        nav_calculator.textContent = "Home"
-    }
-    else if (!isSettings && invertSwitch) {
-        nav_calculator.textContent = "Calculator"
-    }
-    else if (isSettings && !invertSwitch) {
-        nav_calculator.textContent = "Calculator"
-    }
-    else if (!isSettings && !invertSwitch) {
-        nav_calculator.textContent = "Home"
-    }
-    isPreviousClicked = false
-    // rank
-    rank_wrapper.style.display = "none"
-    isRank = false
-    // history.pushState({ default: '0' }, "Default View", "/MDAS_Assessment")
 })
 
+function showNav(nav_element, wrapper, css_display, callback) {
+    // nav_element use for eventlistener
+    // wrapper as wrapper of triggered event
+
+    nav_element.addEventListener("click",async () => {
+        let default_wrapper = null
+
+        await callback((def) => {
+            default_wrapper = def
+        })
+
+        if (wrapper == null || wrapper == "" || wrapper == undefined) {
+            if (which_wrapper_focus) {
+                which_wrapper_focus.style.display = "none"
+
+                which_nav_focus = nav_element
+                which_wrapper_focus = wrapper
+            }
+            return
+        }
+
+        else if (which_nav_focus != nav_element && which_wrapper_focus) {
+            which_wrapper_focus.style.display = "none"
+        }
+
+        if (default_wrapper) {
+            if (wrapper.style.display == "" || wrapper.style.display == "none") {
+
+                if (default_wrapper == wrapper) wrapper = default_wrapper
+
+                default_wrapper.style.display = "none"
+                wrapper.style.display = css_display
+            }
+            else {
+                wrapper.style.display = "none"
+                default_wrapper.style.display = css_display // solving_bar
+            }
+        }
+
+        else if (wrapper.style.display == "" || wrapper.style.display == "none") {
+            wrapper.style.display = css_display
+        }
+        else {
+            wrapper.style.display = "none"
+        }
+
+        which_nav_focus = nav_element
+        which_wrapper_focus = wrapper
+
+    })
+
+}
 
 window.addEventListener('popstate', function(event) {
     // Handle the state change here

@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MDAS Assessment</title>
 
-    <link rel="stylesheet" href="./static/assets/css/index.css">
-    <link rel="stylesheet" href="./static/assets/css/animation.css">
-    <link rel="stylesheet" href="./static/assets/css/tab/customAlert.css">
-    <link rel="stylesheet" href="./static/assets/css/page/settings.css">
-    <link rel="stylesheet" href="./static/assets/css/page/activity.css">
-    <link rel="stylesheet" href="./static/assets/css/page/calculator.css">
-    <link rel="stylesheet" href="./static/assets/css/table/table.css">
-    <link rel="stylesheet" href="./static/assets/css/online/online.css">
-    <link rel="icon" href="./static/assets/favicon/icon.png">
+    <link rel="stylesheet" href="../static/assets/css/index.css">
+    <link rel="stylesheet" href="../static/assets/css/animation.css">
+    <link rel="stylesheet" href="../static/assets/css/tab/customAlert.css">
+    <link rel="stylesheet" href="../static/assets/css/page/settings.css">
+    <link rel="stylesheet" href="../static/assets/css/page/activity.css">
+    <link rel="stylesheet" href="../static/assets/css/page/calculator.css">
+    <link rel="stylesheet" href="../static/assets/css/table/table.css">
+    <link rel="stylesheet" href="../static/assets/css/online/online.css">
+    <link rel="icon" href="../static/assets/favicon/icon.png">
 
 
     <meta property="og:title" content="MDAS Assessment">
@@ -25,12 +25,15 @@
     <!-- <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512"> -->
 
-    <script src="./static/assets/js/init.js" defer></script>
+    <script src="../static/assets/js/init.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.js" defer></script>
 </head>
 
 <body>
     <div class="nav_bar">
+        <div class="nav_home" data-nav_home="">
+            Home
+        </div>
         <div class="nav_rank" data-nav_rank="">
             Online&nbsp;Rank
         </div>
@@ -71,7 +74,7 @@
             <Legend>
                 Miscellaneous
             </Legend>
-            <div class="option_preference_wrapper">
+            <div class="option_preference_wrapper ">
                 <input type="text" class="option_sub_wrapper default_button" placeholder="username" data-username_input="" maxlength="64">
                 <input type="text" class="option_sub_wrapper default_button" placeholder="password" data-password_input="" maxlength="64">
                 <div class="option_sub_wrapper default_button" data-survey="" id="survey">
@@ -342,7 +345,31 @@
             </div>
         </fieldset>
 
-
+        
+        <fieldset class="option_fieldset">
+            <legend>
+                Theme
+            </legend>
+            <details class="option_details">
+                <summary>
+                    Usage
+                </summary>
+                <h2>
+                    Theme
+                </h2>
+                <ul>
+                    <li> Dark Mode: Turns to DarkMode</li>
+                </ul>
+            </details>
+            <div class="option_preference_wrapper">
+                <div class="option_checkbox_wrapper">
+                    <label for="dark_mode">
+                        Dark Mode
+                    </label>
+                    <input data-="dark_mode" id="dark_mode" type="checkbox" />
+                </div>
+            </div>
+        </fieldset>
     </div>
     <div class="main_wrapper">
         <div class="display_score" data-display_score="">
@@ -404,7 +431,7 @@
 
         </div>
         <div class="history_collapse" data-history_collapse>
-            <img src="./static/assets/favicon/less_than.png" alt="&lt;">
+            <img src="../static/assets/favicon/less_than.png" alt="&lt;">
         </div>
         <div class="history_bar" data-history_bar="">
             <div class="history_bar_label">

@@ -11,7 +11,7 @@
     align-items: center;
     padding: clamp(0.7rem, 5dvw, 5dvw) clamp(0.7rem, 5dvw, 5dvw);
 
-    background-color: white;
+    background-color: var(--secondary);
     width: 100dvw;
     height: calc(100dvh - 45px);
 
@@ -23,7 +23,8 @@
     font-family: monospace;
     font-size: 1.2rem;
     
-    border: solid 1px indianred;
+    border: solid 1px var(--primary);
+    color: var(--dark-text);
     height: 355.555555556px;
     width: 200px;
     max-height: 355.555555556px;
@@ -36,7 +37,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: solid 1px indianred; */
+    /* border: solid 1px var(--primary); */
     text-align: center;
 }
 

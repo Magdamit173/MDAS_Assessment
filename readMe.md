@@ -1,11 +1,13 @@
 # MDAS_Assessment
 
-- version 0.0.9.2.1 : mdas_online
+- version 0.0.9.2.2 : mdas_online
 
 ### Update
 
-- updated some input
-- limit request
+- fixed navigation bar
+- fixed `Audio Settings`
+- added `dark mode`
+
 
 ### Experiment Feature
 - `autosolve()` function

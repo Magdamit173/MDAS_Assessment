@@ -10,7 +10,7 @@
     align-items: center;
     padding: clamp(0.7rem, 5dvw, 5dvw) clamp(0.7rem, 5dvw, 5dvw);
 
-    background-color: white;
+    background-color: var(--secondary);
     width: 100dvw;
     height: calc(100dvh - 45px);
 
@@ -19,9 +19,11 @@
 }
 
 .rank_wrapper div {
-    border: solid 1px indianred;
+    border: solid 1px var(--primary);
     padding: 1em;
     font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark-text);
+    background-color: var(--secondary);
 
 }
 .rank_wrapper div ul {
