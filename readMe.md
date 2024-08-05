@@ -1,12 +1,10 @@
 # MDAS_Assessment
 
-- version 0.0.9.2.2 : mdas_online
+- version 0.0.9.2.3 : mdas_online
 
 ### Update
 
-- fixed navigation bar
-- fixed `Audio Settings`
-- added `dark mode`
+- Teaser
 
 
 ### Experiment Feature
