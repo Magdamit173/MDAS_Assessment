@@ -1,6 +1,6 @@
 # MDAS_Assessment
 
-- version 0.0.9.2.3 : mdas_online
+- version 0.0.9.2.4 : mdas_online
 
 ### Update
 
