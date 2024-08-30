@@ -24,7 +24,7 @@
 
     // activity.js "isSettingCounter"
 
-    isSettingCounter = parseFloat(await getLocalStorage("isSettingCounter")) || isSettingCounter
+    // isSettingCounter = parseFloat(await getLocalStorage("isSettingCounter")) || isSettingCounter
 
     // fetch words
     // word_list = (await retrieveContent("./assets/lexicon/words.txt")).trim().split("\n")
@@ -47,6 +47,15 @@
     correct_audio_source.muted = isNaN(is_countdown_queue_muted) ? 0 : !is_answer_queue_muted
     has_countdown_queue.muted = isNaN(is_countdown_queue_muted) ? 0: !is_countdown_queue_muted
 })()
+
+setTimeout(async () => {
+    
+    if (!(await getLocalStorage("content"))) {
+        customAlert("Inactive Content, To be Continued on My Free Time <3, I have more things to do",async (cancel, okay) => {
+            await setLocalStorage("content", 1)
+        })
+    }
+}, 2000)
 
 window.addEventListener("offline", () => {
     customAlert("Seems Offline, \nRefresh(cancel) or Proceed(confirm)",(cancel, okay) => {
