@@ -1,6 +1,6 @@
 hr {
     outline: none;
-    border: solid 0 none;
+    border: solid 1px indianred;
     background-color: indianred;
     /* margin: 1.5rem; */
 }
@@ -26,19 +26,30 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-
     flex-wrap: wrap;
 
-    /* border: solid 1px green; */
-
 }
+
+@media only screen and (min-width: 600px) {
+
+    .option_preference_wrapper {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
 
 .option_fieldset {
     margin: .7rem clamp(0.7rem, 5dvw, 5dvw);
     padding: .1rem clamp(0.7rem, 2.5dvw, 2.5dvw);
     border-radius: 5px;
 }
-.option_fieldset > legend {
+
+.option_fieldset>legend {
     padding: .6rem 1rem;
     font-size: 1.1rem;
     font-family: Arial, Helvetica, sans-serif;
@@ -46,17 +57,17 @@ hr {
     text-align: start;
 }
 
-.option_details > summary {
+.option_details>summary {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 1rem;
 }
 
-.option_details > h1,
-.option_details > h2,
-.option_details > h3,
-.option_details > h4,
-.option_details > p {
+.option_details>h1,
+.option_details>h2,
+.option_details>h3,
+.option_details>h4,
+.option_details>p {
     background-color: aliceblue;
     margin: 1rem;
     border-radius: 5px;
@@ -66,8 +77,8 @@ hr {
     font-weight: 700;
 }
 
-.option_details > ul {
-    
+.option_details>ul {
+
     background-color: aliceblue;
     margin: 1rem;
     border-radius: 5px;
@@ -79,7 +90,7 @@ hr {
     font-size: .95rem;
 }
 
-.option_details > ul > li {
+.option_details>ul>li {
     margin-left: 3rem;
 }
 
@@ -87,10 +98,10 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    align-self: stretch;
+    /* flex-direction: row; */
+    /* align-self: stretch; */
 
-    border: solid 1px transparent;
+    border: solid 1px white;
     border-radius: 10px;
     padding: 0.6rem;
     margin: 0.6rem;
@@ -101,7 +112,7 @@ hr {
 
 }
 
-.option_sub_wrapper > * {
+.option_sub_wrapper>* {
     font-family: Arial, Helvetica, sans-serif;
     /* font-weight: 700; */
     font-size: 1.1rem;
@@ -109,11 +120,11 @@ hr {
     padding: 1rem;
 }
 
-.option_sub_wrapper > label {
+.option_sub_wrapper>label {
     flex-basis: 40%;
 }
 
-.option_sub_wrapper > input {
+.option_sub_wrapper>input {
     font-size: 1.1rem;
     outline: none;
     background-color: snow;
@@ -127,7 +138,7 @@ hr {
     flex-basis: 60%;
 }
 
-.option_sub_wrapper > select {
+.option_sub_wrapper>select {
     font-size: 1rem;
     outline: none;
     color: black;
@@ -157,16 +168,17 @@ hr {
     background-color: indianred;
     color: white;
     text-shadow: 1px 1px 1px black;
-    max-width: 300px;
+    /* max-width: 300px; */
 }
 
-.option_checkbox_wrapper > * {
+.option_checkbox_wrapper>* {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 1.5rem;
     flex-basis: 50%;
 }
-.option_checkbox_wrapper > label {
+
+.option_checkbox_wrapper>label {
     border: solid 1px white;
     border-radius: 10px;
     /* overwrite font-size, margin, and padding */
@@ -177,21 +189,109 @@ hr {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.option_checkbox_wrapper  > input {
+.option_checkbox_wrapper>input {
     font-size: 1.1rem;
     outline: none;
     background-color: snow;
     border: solid 0 transparent;
     border-radius: 4px;
     width: 100%;
-    
+
     height: 1.1rem;
 }
 
-.option_checkbox_wrapper  > input[type="checkbox"] {
-    height: 2.5rem;
+.option_sub_wrapper > input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, #ff6b6b, #48dbfb); /* Smooth gradient */
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Thumb Styling */
+.option_sub_wrapper > input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid #ff6b6b;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.option_sub_wrapper > input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid #ff6b6b;
+    border-radius: 50%;
     cursor: pointer;
 }
+
+/* Hover & Active Effect */
+.option_sub_wrapper > input[type="range"]:hover::-webkit-slider-thumb {
+    transform: scale(1.2);
+    background-color: #ff6b6b;
+}
+
+.option_sub_wrapper > input[type="range"]:active::-webkit-slider-thumb {
+    background-color: #d63031; /* Darker red when pressed */
+}
+
+/* Adding smooth transition for Firefox */
+.option_sub_wrapper > input[type="range"]:hover::-moz-range-thumb {
+    transform: scale(1.1);
+    background-color: #ff6b6b;
+}
+.option_sub_wrapper > input[type="range"]:active::-moz-range-thumb {
+    background-color: #d63031;
+}
+
+
+.option_checkbox_wrapper > input[type="checkbox"] {
+    appearance: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: lightcoral;
+    border: 2px solid white;
+    text-shadow: 1px 1px 1px black;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Text Indicator */
+.option_checkbox_wrapper > input[type="checkbox"]::before {
+    content: "Off";
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: color 0.3s ease-in-out;
+}
+
+/* Checked State */
+.option_checkbox_wrapper > input[type="checkbox"]:checked {
+    background-color: skyblue;
+    border: solid 2px white;
+}
+
+.option_checkbox_wrapper > input[type="checkbox"]:checked::before {
+    content: "On";
+    color: white;
+}
+
 
 #number_type {
     color: indianred;

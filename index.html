@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MDAS Assessment</title>
     <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="./assets/css/animation.css">
 
     <link rel="stylesheet" href="./assets/css/tab/customAlert.css">
     <link rel="stylesheet" href="./assets/css/page/settings.css">
@@ -170,6 +169,45 @@
                         <option value="Integer" selected>Integer</option>
                         <option value="Float">Float</option>
                     </select>
+                </div>
+            </div>
+        </fieldset>
+        <hr>
+
+        <fieldset class="option_fieldset">
+            <legend>
+                Significant Figures Parameters
+            </legend>
+            <details class="option_details">
+                <summary>
+                    Usage
+                </summary>
+                <h1> Sig Fig </h2>
+            </details>
+            <div class="option_preference_wrapper">
+                <div class="option_sub_wrapper">
+                    <label for="minsigfig_input">
+                        Minimum SigFig
+                    </label>
+                    <input data-minsigfig_input="" id="minsigfig_input"/>
+                </div>
+                <div class="option_sub_wrapper">
+                    <label for="maxsigfig_input">
+                        Maximum SigFig
+                    </label>
+                    <input data-maxsigfig_input="" id="maxsigfig_input"/>
+                </div>
+                <div class="option_sub_wrapper">
+                    <label for="minsigfigmultiplier_input">
+                        Minimum Multiplier
+                    </label>
+                    <input data-minsigfigmultiplier_input="" id="minsigfigmultiplier_input"/>
+                </div>
+                <div class="option_sub_wrapper">
+                    <label for="maxsigfigmultiplier_input">
+                        Maximum Multiplier
+                    </label>
+                    <input data-maxsigfigmultiplier_input="" id="maxsigfigmultiplier_input"/>
                 </div>
             </div>
         </fieldset>

@@ -1,10 +1,11 @@
 # MDAS_Assessment
 
-- version 0.0.8.9.9.1
+- version 0.1.1
 
 ### Update
 
 - inactive for now
+- unfinished sigfig update
 
 ### Experiment Feature
 - `autosolve()` function
