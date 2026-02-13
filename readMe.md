@@ -1,11 +1,10 @@
 # MDAS_Assessment
 
-- version 0.1.1
+- version 0.1.2
 
 ### Update
 
-- inactive for now
-- unfinished sigfig update
+- settings UI enhance by gemini
 
 ### Experiment Feature
 - `autosolve()` function
